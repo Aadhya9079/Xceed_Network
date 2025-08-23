@@ -1,0 +1,27 @@
+.joinus-banner {
+  position: fixed;
+  top: 50%;
+  left: 0;                      /* stick to left edge */
+  transform: translateY(-50%) rotate(180deg); /* vertical text bottom→top */
+  background: #111;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  writing-mode: vertical-rl;
+}
+
+.joinus-banner a {
+  display: block;
+  padding: clamp(10px, 1.6vw, 14px) clamp(8px, 1.2vw, 12px);
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  text-align: center;
+}
+
+.joinus-banner:hover {
+  background: #090909;
+  box-shadow: 10px 5px 10px rgba(248, 247, 247, 0.35);
+}

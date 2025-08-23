@@ -1,0 +1,46 @@
+/* Floating button (bottom-right) with fade-in/out */
+.scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #f1f2f7, #1159bf);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  z-index: 9999;                 /* on top of everything */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+
+  /* hidden by default; becomes visible with .show */
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease, background .3s ease;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+  background: #111;               /* darker on hover */
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  .scroll-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 48px;
+    height: 48px;
+  }
+}

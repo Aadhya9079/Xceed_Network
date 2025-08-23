@@ -1,10 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // bootstrap styles
+import LandingPage from "./components/landingpage.jsx";
+import WelcomeSection from "./components/Welcomesection.jsx";
+import Membership from "./components/Membership.jsx";
+import Catalogue from "./components/Catalogue.jsx";
+import Services from "./components/Services.jsx";
+import Connect from "./components/Connect.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import JoinUs from "./components/JoinUs.jsx";
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <LandingPage />
+    <WelcomeSection/>
+    <Membership/>
+    <Catalogue/>
+    <Services/>
+    <Connect/>
+    <ScrollToTop/>
+    <JoinUs/>
+  </StrictMode>
+);
