@@ -9,15 +9,17 @@ import Catalogue from "./components/Catalogue.jsx";
 import Services from "./components/Services.jsx";
 import Connect from "./components/Connect.jsx";
 import JoinUs from "./components/JoinUs.jsx";
+import Footer from "./components/footer.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
- 
+  
     <LandingPage />
     <WelcomeSection/>
     <Membership/>
     <Catalogue/>
     <Services/>
     <Connect/>
+    <Footer/>
     <JoinUs/>
   </StrictMode>
 );
