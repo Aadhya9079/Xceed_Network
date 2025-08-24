@@ -12,8 +12,8 @@
 /* Subtle frosted effect on scroll */
 .xh-header.is-scrolled {
   background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(8px) saturate(140%);
   -webkit-backdrop-filter: blur(8px) saturate(140%);
+  backdrop-filter: blur(8px) saturate(140%);
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   border-bottom-color: rgba(0,0,0,0.1);
 }
