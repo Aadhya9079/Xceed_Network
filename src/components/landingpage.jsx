@@ -14,7 +14,7 @@ export default function LandingPage() {
         indicators={false}
         pause={false}          // always autoplay
       >
-        <Carousel.Item>
+        <Carousel.Item className="overlay">
           <img className="d-block w-100 carousel-img" src={bgImage1} alt="Slide 1" />
           <div className="carousel-caption">
             <h1 className="caption-title">Entrepreneur’s Organization</h1>
@@ -25,7 +25,7 @@ export default function LandingPage() {
           </div>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item className="overlay-blue">
           <img className="d-block w-100 carousel-img" src={bgImage2} alt="Slide 2" />
           <div className="carousel-caption">
             <h2 className="caption-title">Digital solution for a smart business</h2>
@@ -36,7 +36,7 @@ export default function LandingPage() {
           </div>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item className="overlay-gold">
           <img className="d-block w-100 carousel-img" src={bgImage3} alt="Slide 3" />
           <div className="carousel-caption">
             <h3 className="caption-title">Empowering Your Business With Smart Solutions</h3>

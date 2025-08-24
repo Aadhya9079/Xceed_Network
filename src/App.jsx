@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 // import './App.css'
+import Header from './components/header';
 import LandingPage from './components/landingpage';
 import WelcomeSection from './components/Welcomesection';
 import Membership from './components/Membership';
@@ -15,6 +16,7 @@ function App() {
   return (
     
     <>
+    <Header/>
     <LandingPage/>
       <WelcomeSection/>
       <Membership/>

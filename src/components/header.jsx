@@ -1,118 +1,83 @@
-import { useEffect, useState } from "react"
-import Logo from "../assets/logo.png"
-import Instagram from "../assets/instagram.png"
-import Facebook from "../assets/facebook.png"
-import Linkedin from "../assets/linkedin.png"
+import { useEffect, useState } from "react";
+import "./header.css";
 
-const Header = () => {
-  const [step, setStep] = useState(0)
+import Logo from "../assets/logo.png";
+import Instagram from "../assets/instagram.png";
+import Facebook from "../assets/facebook.png";
+import Linkedin from "../assets/linkedin.png";
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setStep((prev) => (prev === 3 ? 1 : prev + 1));
-    }, 1200);
-    return () => clearInterval(interval);
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const textStyle = {
-    fontSize: "12px",
-    color: "#061651",
-    lineHeight: "1.5",
-    textAlign: "center",
-  };
-
-  const fadeStyle = {
-    opacity: 0,
-    animation: "fadeIn 0.8s forwards",
-    padding: "2px 0",
-  };
+  const navItems = [
+    "About",
+    "Our Chapters",
+    "Membership",
+    "Our Events",
+    "Catalogue",
+    "Our Community",
+    "Our Programs",
+  ];
 
   return (
-    <header className="w-full bg-white shadow">
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}
-      </style>
+    <>
+      <header className={`xh-header ${isScrolled ? "is-scrolled" : ""}`}>
+        {/* Row 1 */}
+        <div className="xh-top-row">
+          <div className="xh-brand">
+            <img src={Logo} alt="Xceed Network" className="xh-logo" />
+          </div>
 
-      <div className="max-w-screen-xl mx-auto px-6 flex flex-col items-center">
-        {/* Logo + Text + Buttons in center */}
-       <div className="flex items-center gap-[400px]">
-  {/* Logo + Text */}
-  <div className="flex items-center gap-2 py-1">
-    <img src={Logo} alt="Logo" className="w-[90px] h-auto" />
-    {/* <h6
-      style={textStyle}
-      className="flex flex-col items-start space-y-1"
-    >
-      {step >= 1 && <div style={fadeStyle}>CONNECT</div>}
-      {step >= 2 && <div style={fadeStyle}>GROW</div>}
-      {step >= 3 && <div style={fadeStyle}>SUCCEED</div>}
-    </h6> */}
-  </div>
+          <div className="xh-right">
+            <div className="xh-social">
+              <img src={Linkedin} alt="LinkedIn" className="xh-social-icon linkedin" />
+              <img src={Facebook} alt="Facebook" className="xh-social-icon facebook"/>
+              <img src={Instagram} alt="Instagram" className="xh-social-icon instagram" />
+            </div>
+            <div className="xh-auth">
+              <button className="xh-btn xh-btn--primary">MEMBER'S LOGIN</button>
+              <button className="xh-btn xh-btn--accent">JOIN XCEED</button>
+            </div>
+          </div>
+        </div>
 
-  {/* Buttons */}
-  <div className="flex items-center gap-5">
-    <div className="flex items-center gap-2">
-       <img src={Linkedin} alt="Logo" className="text-[#061651] h-[20px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
-     <img src={Facebook} alt="Logo" className="text-[#061651] h-[22px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
-    <img src={Instagram} alt="Logo" className="text-[#061651] h-[20px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
-    </div>
+        {/* Row 2 */}
+        <div className="xh-inner">
+          <nav className="xh-nav" aria-label="Primary">
+            {navItems.map((label) => (
+              <div className="xh-item" key={label}>
+                <button
+                  className="xh-linkBtn"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span className="xh-linkText">{label}</span>
+                  {/* Filled black caret */}
+                  <svg
+                    className="xh-caret"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    aria-hidden="true"
+                  >
+                    <polygon points="6,9 12,15 18,9" fill="black" />
+                  </svg>
+                </button>
+              </div>
+            ))}
+          </nav>
+        </div>
+      </header>
 
-    <div className="flex items-center gap-2">
-      <button className="bg-[#061651] text-white px-3 py-2 rounded-full font-bold  transition-transform duration-300 hover:scale-105 cursor-pointer">
-      MEMBER'S LOGIN
-    </button>
-    <button className="bg-[#D4AF37] text-white px-4 py-2 rounded-full font-bold  transition-transform duration-300 hover:scale-105 cursor-pointer">
-      JOIN XCEED
-    </button>
-    </div>
-  </div>
-</div>
-
-       <ul className="nav nav-underline flex gap-5 justify-center">
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      About
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Our Chapters
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Membership
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Our Events
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Catalogue
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Our Community
-    </a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link text-black hover:text-[#061651]" href="#">
-      Our Programs
-    </a>
-  </li>
-</ul>
-      </div>
-    </header>
-  )
+      <div className="xh-header-spacer" />
+    </>
+  );
 }
-
-export default Header
