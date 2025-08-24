@@ -2,8 +2,8 @@
 .member-section {
   width: 100%;
   padding: clamp(48px, 7vw, 72px) clamp(12px, 3vw, 16px);
-  background: linear-gradient(135deg, #fdfeff, #152a44);
-  color: #e9f1ff;
+  background: linear-gradient(135deg, #1d4972, #d4b153);
+  color: #ebedef;
 }
 
 /* Content container */
@@ -65,7 +65,7 @@
 .member-cta {
   display: inline-block;
   font-weight: 700;
-  background: #ffffff;
+  background: #d4b153;
   color: #0b1623;
   padding: 9px 14px;
   border-radius: 999px;

@@ -15,7 +15,7 @@ export default function Membership() {
               <h3 className="member-card-title">XceedNetwork</h3>
               <p className="member-card-text">
                 A thriving community where founders, leaders, and professionals
-                connect for peer learning, mentorship, partnerships, and growth.
+                connect for peer learning, mentorship.
               </p>
               <span className="member-cta">Explore →</span>
             </div>

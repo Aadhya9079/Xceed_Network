@@ -1,8 +1,8 @@
 /* ===== Section base ===== */
 .catalogue-section {
   padding: clamp(48px, 7vw, 70px) 16px;
-  background: #000;
-  color: #eaf2ff;
+  background: #fbfafa;
+  color: #080909;
 }
 .catalogue-container { max-width: 1200px; margin: 0 auto; }
 .catalogue-title {
@@ -45,8 +45,8 @@
   display: grid; place-items: center;
   text-decoration: none; color: inherit;
   border-radius: 16px;
-  background: #0f0f10;
-  box-shadow: 0 12px 28px rgba(0,0,0,.55);
+  background: #0f0f12;
+  box-shadow: 0 12px 28px rgba(17, 16, 16, 0.55);
   position: relative; isolation: isolate;
   transition: transform .22s ease, box-shadow .22s ease;
 }
@@ -56,13 +56,13 @@
 }
 .catalogue-banner::before {
   background:
-    repeating-linear-gradient(-45deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 10px);
+    repeating-linear-gradient(-45deg, rgba(206, 26, 26, 0.06) 0 1px, transparent 1px 10px);
 }
 .catalogue-banner::after {
   background:
     linear-gradient(120deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 35%),
     radial-gradient(60% 120% at 120% -20%, rgba(255,255,255,0.12), transparent 60%);
-  mix-blend-mode: screen; opacity: .6;
+  mix-blend-mode: screen; opacity: 10;
 }
 .catalogue-banner:hover {
   transform: translateY(-3px);
@@ -72,13 +72,13 @@
 /* Content inside */
 .banner-content { text-align: center; padding: 18px 16px; max-width: 92%; }
 .banner-content h3 { margin: 0 0 6px; font-weight: 800; font-size: clamp(1rem, 1.8vw, 1.2rem); color: #fff; }
-.banner-content p  { margin: 0 0 8px; font-size: .95rem; opacity: .92; }
+.banner-content p  { margin: 0 0 8px; font-size: .95rem; opacity: 10; }
 .banner-cta { display: inline-block; background: #fff; color: #000; font-weight: 800; border-radius: 999px; padding: 6px 12px; font-size: .85rem; }
 
 /* Optional alternating tones */
-.banner-a { background: #0f141d; }
-.banner-b { background: #111723; }
-.banner-c { background: #0d1a24; }
+.banner-a { background: #0f4fc6; }
+.banner-b { background: #0f4fc6; }
+.banner-c { background: #0f4fc6; }
 
 @media (max-width: 768px) {
   .catalogue-banner { width: clamp(200px, 60vw, 300px); }

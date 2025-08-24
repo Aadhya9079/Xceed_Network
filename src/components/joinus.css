@@ -3,7 +3,7 @@
   top: 50%;
   left: 0;                      /* stick to left edge */
   transform: translateY(-50%) rotate(180deg); /* vertical text bottom→top */
-  background: #111;
+  background: #d4b153;
   border-radius: 8px 0 0 8px;
   box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.25);
   z-index: 1000;
