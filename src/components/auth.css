@@ -1,0 +1,88 @@
+/* Page wrapper: white bg, center form */
+.auth-page.plain {
+  min-height: 100vh;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* Gradient form card with black border & shadow */
+.auth-card.gradient-card {
+  width: min(92vw, 520px);
+ background: linear-gradient(135deg, #1d4972, #d4b153);
+  border: 2px solid #111111;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  padding: 28px;
+}
+
+.auth-card h2 {
+  margin: 0 0 14px;
+  text-align: center;
+  color: #f8f8f9;
+  font-weight: 800;
+}
+
+/* Form layout */
+.auth-card form { display: grid; gap: 12px; }
+
+label { font-weight: 700; color: #efecec; font-size: .95rem; }
+.req { color: #d72638; margin-left: 2px; }
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+input:focus, select:focus {
+  border-color: #061651;
+  box-shadow: 0 0 0 3px rgba(6,22,81,.15);
+}
+
+/* Phone row: code + number */
+.phone-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+}
+@media (max-width: 420px) {
+  .phone-row { grid-template-columns: 1fr; }
+}
+.cc-select { }
+.phone-input { }
+
+/* Validation error style */
+.invalid {
+  border-color: #d72638 !important;
+  box-shadow: 0 0 0 3px rgba(215, 38, 56, 0.12) !important;
+}
+
+/* Submit button */
+.auth-btn {
+  margin-top: 6px;
+  background: #0f1d62;
+  color: #fff;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease, opacity .2s ease;
+}
+.auth-btn:disabled { opacity: .6; cursor: not-allowed; }
+.auth-btn:not(:disabled):hover { background: #0a1f6e; transform: translateY(-1px); }
+
+.auth-note {
+  margin-top: 12px;
+  text-align: center;
+  color: #f0eeee;
+  font-size: .95rem;
+}
+.auth-note a { color: #143797; font-weight: 800; text-decoration: none; }
+.auth-note a:hover { text-decoration: underline; }

@@ -1,31 +1,53 @@
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { useState } from 'react'
-// import './App.css'
-import Header from './components/header';
-import LandingPage from './components/landingpage';
-import WelcomeSection from './components/Welcomesection';
-import Membership from './components/Membership';
-import Catalogue from './components/Catalogue';
-import Services from './components/Services';
-import Connect from './components/Connect';
-import JoinUs from './components/JoinUs';
-import Footer from './components/footer';
+// Core Components
+import Header from "./components/Header";
+import LandingPage from "./components/LandingPage";
+import WelcomeSection from "./components/Welcomesection";
+import Membership from "./components/Membership";
+import Catalogue from "./components/Catalogue";
+import Services from "./components/Services";
+import Connect from "./components/Connect";
+import Footer from "./components/Footer";
+import JoinUs from "./components/JoinUs";
+import ScrollOnTop from "./components/ScrollOnTop";
 
-function App() {
+// Auth Pages
+import Login from "./components/Login";
+import JoinXceed from "./components/JoinXceed";
 
+export default function App() {
   return (
-    
-    <>
-    <Header/>
-    <LandingPage/>
-      <WelcomeSection/>
-      <Membership/>
-      <Catalogue/>
-      <Services/>
-      <Connect/>
-      <Footer/>
-      <JoinUs/>
-    
-      </>
-    
-  );}
+    <Router>
+      <Header />
+
+      <Routes>
+        {/* === Homepage layout === */}
+        <Route
+          path="/"
+          element={
+            <>
+              <main>
+                <LandingPage />
+                <WelcomeSection />
+                <Membership />
+                <Catalogue />
+                <Services />
+                <Connect />
+              </main>
+
+              <Footer />
+              <JoinUs />
+              <ScrollOnTop threshold={40} scrollTargetSelector=".page-wrapper" />
+            </>
+          }
+        />
+
+        {/* === Auth Pages === */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/join-xceed" element={<JoinXceed />} />
+      </Routes>
+    </Router>
+  );
+}

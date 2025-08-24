@@ -1,5 +1,7 @@
 import React from "react";
 import "./footer.css";
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"; // if your version doesn't have this, use FaTwitter from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -36,9 +38,17 @@ const Footer = () => {
         <div>
           <h3 className="footer-title">Contact</h3>
           <ul>
-            <li className="footer-contact"><span>📍</span>3964 Rivermark Plaza #113, Santa Clara, CA 95054, USA</li>
-            <li className="footer-contact"><span>📞</span>+1 408-567-0700</li>
-            <li className="footer-contact"><span>✉️</span>global@tie.org</li>
+            <li className="footer-contact">
+              <span>📍</span>3964 Rivermark Plaza #113, Santa Clara, CA 95054, USA
+            </li>
+            <li className="footer-contact">
+              <span>📞</span>
+              <a href="tel:+14085670700">+1 408-567-0700</a>
+            </li>
+            <li className="footer-contact">
+              <span>✉️</span>
+              <a href="mailto:global@tie.org">global@tie.org</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -46,10 +56,52 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-socials">
-          <a href="#">in</a>
-          <a href="#">f</a>
-          <a href="#">X</a>
+          {/* Replace YOUR_ID / YOUR_HANDLE with your real profiles */}
+          <a
+            href="https://www.linkedin.com/company/YOUR_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="social linkedin"
+            title="LinkedIn"
+          >
+            <FaLinkedinIn />
+          </a>
+
+          <a
+            href="https://www.facebook.com/YOUR_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="social facebook"
+            title="Facebook"
+          >
+            <FaFacebookF />
+          </a>
+
+          <a
+            href="https://www.instagram.com/YOUR_HANDLE"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="social instagram"
+            title="Instagram"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://twitter.com/YOUR_HANDLE"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter)"
+            className="social x"
+            title="X"
+          >
+            <FaXTwitter />
+          </a>
         </div>
+
         <p>Copyright © 2025 – Xceed Network</p>
       </div>
     </footer>

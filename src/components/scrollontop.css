@@ -1,0 +1,77 @@
+.sot-btn {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: clamp(44px, 7.5vw, 60px);
+  height: clamp(44px, 7.5vw, 60px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #0f2fd2, #1159bf);
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease, background .25s ease;
+  z-index: 2147483647;
+}
+
+.sot-btn.show {
+  opacity: 0;
+  transform: translateY(0) scale(1);
+  pointer-events: auto !important; /* defeat any global CSS */
+}
+
+.sot-btn:hover { background: linear-gradient(135deg, #0e2abf, #0e47a6); }
+.sot-btn:active { transform: translateY(1px) scale(0.98); }
+
+@media (min-width: 1024px) {
+  .sot-btn svg { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sot-btn { transition: none; }
+}
+/* Submenu styling */
+.xh-submenu {
+  position: absolute;
+  top: 100%; left: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 8px 0;
+  margin-top: 6px;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+
+.xh-submenu li { width: 100%; }
+
+.xh-subLink {
+  display: block;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #222;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.xh-subLink:hover {
+  background: rgba(6,22,81,0.08);
+  color: #061651;
+}
+
+/* Ensure parent nav items are relative for submenu positioning */
+.xh-item {
+  position: relative;
+}

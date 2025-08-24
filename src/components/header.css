@@ -5,13 +5,13 @@
   z-index: 10000;
 
   background: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(20, 19, 19, 0.06);
   transition: background .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 /* Subtle frosted effect on scroll */
 .xh-header.is-scrolled {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(8px) saturate(140%);
   backdrop-filter: blur(8px) saturate(140%);
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
@@ -31,18 +31,25 @@
   width: 100%;
 }
 
-.xh-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.xh-brand {
+  display: flex;
+  flex-direction: column;       /* logo stacked like footer */
+  align-items: flex-start;      /* align left */
+  justify-content: center;
+  gap: 8px;
+}
 
 /* Bigger, responsive logo */
 .xh-logo {
-  height: clamp(70px, 10vw, 110px);
-  width: auto;
-  object-fit: contain;
+  width: 180px;                 /* same size as footer */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 4px;
 }
 
 .xh-right {
   display: flex;
-  align-items: center;
+  align-items: justify;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -78,6 +85,12 @@
 .xh-btn--accent  { background: #D4AF37; color: #fff; }
 .xh-btn--accent:hover { background: #0a1f6e; transform: translateY(-1px); }
 
+
+
+
+
+
+
 /* ===== Row 2 container (constrained width) ===== */
 .xh-inner {
   max-width: 1240px;
@@ -96,20 +109,6 @@
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===== Row 2: nav with separators + dropdown caret ===== */
 .xh-nav {
   display: flex;
@@ -125,8 +124,6 @@
 
 .xh-item {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 /* short vertical separator between items (not after last) */
@@ -134,7 +131,7 @@
   content: "";
   width: 1px;
   height: 18px;
-  background:#000;
+  background:#050505;
   margin: 0 clamp(10px, 2vw, 18px);
 }
 
@@ -144,24 +141,24 @@
   align-items: center;
   gap: 6px;
   padding: 8px 10px;
-  border: none;
-  background: transparent;
+  border:#D4AF37;
+  background:transparent;
   cursor: pointer;
-  color: #0b1324;
+  color: #09090a;
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 20px;
   transition: background .2s ease, color .2s ease, transform .15s ease;
   white-space: nowrap;
 }
 .xh-linkBtn:hover {
-  background: rgba(6, 22, 81, 0.08);
-  color: #061651;
+  background: rgba(14, 15, 13, 0.08);
+  color: #0cbc26;
   transform: translateY(-1px);
 }
 
 .xh-caret {
-  transition: transform .2s ease;
-  fill:black;
+  transition: transform 0.1s ease;
+  fill:rgb(9, 10, 9);
 }
 
 /* Dropdown (hidden by default; ready for future) */
@@ -185,11 +182,13 @@
 .xh-item:hover .xh-menu { display: block; }
 .xh-item:hover .xh-caret { transform: rotate(180deg); }
 
+
+
 /* When submenu links are added */
 .xh-menu li { list-style: none; }
 .xh-menu a {
   display: block; padding: 8px 10px; border-radius: 8px;
-  color: #0b1324; text-decoration: none; font-weight: 600;
+  color: #1c1c1e; text-decoration: none; font-weight: 600;
 }
 .xh-menu a:hover { background: rgba(6,22,81,.06); }
 
@@ -228,4 +227,71 @@
   .xh-logo { height: 46px; }
   .xh-linkBtn { padding: 7px 8px; font-size: .92rem; }
   .xh-caret { width: 14px; height: 14px; }
+}
+
+/* Hide submenu by default */
+.xh-submenu {
+  position: absolute;
+  top: 100%; left: 0;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 8px 0;
+  margin-top: 6px;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  display: none;                 /* HIDDEN by default */
+  z-index: 9999;
+}
+
+/* Show submenu on hover */
+.xh-item:hover .xh-submenu {
+  display: block;
+  animation: dropdownFade .25s ease;
+}
+
+/* Animation for smooth dropdown */
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.xh-subLink {
+  display: block;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #222;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.xh-subLink:hover {
+  background: rgba(6,22,81,0.08);
+  color: #061651;
+}
+
+@media (max-width: 720px) {
+  .xh-logo {
+    width: 150px;  /* slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 520px) {
+  .xh-logo {
+    width: 130px;  /* even smaller on mobiles */
+  }
+}
+
+@media (max-width: 400px) {
+  .xh-logo {
+    width: 110px;  /* compact for very small screens */
+  }
+}
+.twitter {
+  filter: invert(32%) sepia(97%) saturate(1500%) hue-rotate(180deg) brightness(92%) contrast(90%);
+}
+
+.xh-logo-link {
+  display: inline-block;
+  text-decoration: none;
 }
