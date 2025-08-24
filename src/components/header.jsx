@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
-import Logo from "../assets/logo.png";
+import { useEffect, useState } from "react"
+import Logo from "../assets/logo.png"
+import Instagram from "../assets/instagram.png"
+import Facebook from "../assets/facebook.png"
+import Linkedin from "../assets/linkedin.png"
 
 const Header = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,32 +40,40 @@ const Header = () => {
 
       <div className="max-w-screen-xl mx-auto px-6 flex flex-col items-center">
         {/* Logo + Text + Buttons in center */}
-       <div className="flex items-center gap-[450px]">
+       <div className="flex items-center gap-[400px]">
   {/* Logo + Text */}
   <div className="flex items-center gap-2 py-1">
     <img src={Logo} alt="Logo" className="w-[90px] h-auto" />
-    <h6
+    {/* <h6
       style={textStyle}
       className="flex flex-col items-start space-y-1"
     >
       {step >= 1 && <div style={fadeStyle}>CONNECT</div>}
       {step >= 2 && <div style={fadeStyle}>GROW</div>}
       {step >= 3 && <div style={fadeStyle}>SUCCEED</div>}
-    </h6>
+    </h6> */}
   </div>
 
   {/* Buttons */}
-  <div className="flex items-center gap-4">
-    <button className="bg-[#061651] text-white px-6 py-2 rounded-full font-bold">
-      LOGIN
+  <div className="flex items-center gap-5">
+    <div className="flex items-center gap-2">
+       <img src={Linkedin} alt="Logo" className="text-[#061651] h-[20px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
+     <img src={Facebook} alt="Logo" className="text-[#061651] h-[22px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
+    <img src={Instagram} alt="Logo" className="text-[#061651] h-[20px]  transition-transform duration-300 hover:scale-130 cursor-pointer"/>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <button className="bg-[#061651] text-white px-3 py-2 rounded-full font-bold  transition-transform duration-300 hover:scale-105 cursor-pointer">
+      MEMBER'S LOGIN
     </button>
-    <button className="bg-[#D4AF37] text-white px-6 py-2 rounded-full font-bold">
-      REGISTER
+    <button className="bg-[#D4AF37] text-white px-4 py-2 rounded-full font-bold  transition-transform duration-300 hover:scale-105 cursor-pointer">
+      JOIN XCEED
     </button>
+    </div>
   </div>
 </div>
 
-       <ul className="nav nav-underline flex gap-4 justify-center">
+       <ul className="nav nav-underline flex gap-5 justify-center">
   <li className="nav-item">
     <a className="nav-link text-black hover:text-[#061651]" href="#">
       About
@@ -101,7 +112,7 @@ const Header = () => {
 </ul>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
