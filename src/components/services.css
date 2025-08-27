@@ -1,8 +1,8 @@
 /* ===== Section base ===== */
 .services-section {
   padding: clamp(48px, 7vw, 70px) 16px;
-  background: #f4f0f0;
-  color: #000000;
+  background: #dedcdb;
+  color: #030303;
 }
 .services-container { max-width: 1200px; margin: 0 auto; }
 .services-title {
@@ -77,9 +77,9 @@
 .srv-cta { display: inline-block; background: #fff; color: #000; font-weight: 800; border-radius: 999px; padding: 6px 12px; font-size: .85rem; }
 
 /* Alternating accents */
-.srv-a { background: #0f4fc6; }
-.srv-b { background: #0f4fc6; }
-.srv-c { background: #0f4fc6; }
+.srv-a { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%); }
+.srv-b { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%); }
+.srv-c { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%); }
 
 @media (max-width: 768px) {
   .services-banner { width: clamp(200px, 60vw, 300px); }

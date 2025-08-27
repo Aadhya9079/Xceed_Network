@@ -73,12 +73,12 @@
 .banner-content { text-align: center; padding: 18px 16px; max-width: 92%; }
 .banner-content h3 { margin: 0 0 6px; font-weight: 800; font-size: clamp(1rem, 1.8vw, 1.2rem); color: #fff; }
 .banner-content p  { margin: 0 0 8px; font-size: .95rem; opacity: 10; }
-.banner-cta { display: inline-block; background: #fff; color: #000; font-weight: 800; border-radius: 999px; padding: 6px 12px; font-size: .85rem; }
+.banner-cta { display: inline-block; background: #e9e5e5; color: #000; font-weight: 800; border-radius: 999px; padding: 6px 12px; font-size: .85rem; }
 
 /* Optional alternating tones */
-.banner-a { background: #0f4fc6; }
-.banner-b { background: #0f4fc6; }
-.banner-c { background: #0f4fc6; }
+.banner-a { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%); }
+.banner-b { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%);  }
+.banner-c { background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #628aba 60%, #04326b 100%);  }
 
 @media (max-width: 768px) {
   .catalogue-banner { width: clamp(200px, 60vw, 300px); }

@@ -1,6 +1,6 @@
 /* ===== Footer Base ===== */
 .footer {
-  background: linear-gradient(135deg, #adb6df, #2621b4);
+background: linear-gradient(135deg, #1d4972, #d4b153);
   color: #eaeaea;
   font-size: 0.95rem;
 }
@@ -27,7 +27,7 @@
 
 .footer-title {
   font-weight: bold;
-  border-bottom: 2px solid #D4AF37;
+  border-bottom: 2px solid #05216f;
   display: inline-block;
   margin-bottom: 14px;
   padding-bottom: 4px;
@@ -70,7 +70,7 @@
 
 /* ===== Bottom Bar ===== */
 .footer-bottom {
-  background-color: #D4AF37;
+  background: linear-gradient(135deg, #000305, #060500);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@
   text-align: center;
   gap: 6px;
   font-size: 0.9rem;
-  color: #222;
+  color: #f6f3f3;
   font-weight: 500;
 }
 

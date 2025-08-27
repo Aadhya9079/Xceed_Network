@@ -5,7 +5,7 @@
 :root {
   --space-blue: #0b3d91;
   --space-blue-deep: #072a63;
-  --space-blue-accent: #1064e1;
+  --space-blue-accent: #cad1dc;
   --space-black: #0b0c10;
   --bg-light: #f4f6fb;
   --text-dark: #0f1b2d;
@@ -72,7 +72,7 @@
   color: #fff;
   text-align: center;
   box-shadow: 0 12px 18px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(135deg, #adb6df, #2621b4);
+  background: linear-gradient(135deg, #f5c75d, #1d1d83);
   animation: pulseZoom 2.8s ease-in-out infinite;
   transition: box-shadow .35s ease, transform .35s ease, filter .35s ease;
 }
