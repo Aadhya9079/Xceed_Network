@@ -9,7 +9,7 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 48px 24px 15px 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
@@ -22,7 +22,7 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
 }
 .footer-logo img {
   width: 180px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .footer-title {
@@ -70,7 +70,7 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
 
 /* ===== Bottom Bar ===== */
 .footer-bottom {
-  background: linear-gradient(135deg, #000305, #060500);
+  /* background:  , #d4b153); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +88,6 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
 .footer-socials {
   display: flex;
   gap: 18px;
-  margin-top: 4px;
 }
 
 .footer-socials a {

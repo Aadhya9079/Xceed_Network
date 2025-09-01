@@ -2,8 +2,8 @@ import Carousel from "react-bootstrap/Carousel";
 import "./landingpage.css";
 
 import bgImage1 from "../assets/image1.jpg";
-import bgImage2 from "../assets/image2.jpg";
-import bgImage3 from "../assets/image3.jpg";
+import landing from "../assets/landing.jpeg";
+import landing1 from "../assets/landing1.jpeg";
 
 export default function LandingPage() {
   return (
@@ -25,8 +25,8 @@ export default function LandingPage() {
           </div>
         </Carousel.Item>
 
-        <Carousel.Item className="overlay-blue">
-          <img className="d-block w-100 carousel-img" src={bgImage2} alt="Slide 2" />
+        <Carousel.Item className="overlay-light-blue">
+          <img className="d-block w-100 carousel-img" src={landing} alt="Slide 2" />
           <div className="carousel-caption">
             <h2 className="caption-title">Digital solution for a smart business</h2>
             <p className="caption-body">
@@ -36,8 +36,8 @@ export default function LandingPage() {
           </div>
         </Carousel.Item>
 
-        <Carousel.Item className="overlay-gold">
-          <img className="d-block w-100 carousel-img" src={bgImage3} alt="Slide 3" />
+        <Carousel.Item className="overlay">
+          <img className="d-block w-100 carousel-img" src={landing1} alt="Slide 3" />
           <div className="carousel-caption">
             <h3 className="caption-title">Empowering Your Business With Smart Solutions</h3>
             <p className="caption-body">

@@ -6,7 +6,7 @@ export default function Membership() {
   return (
     <section className="member-section" id="membership">
       <div className="member-container">
-        <h2 className="member-title">Membership</h2>
+        <h2 className="member-title">EXPLORE OUR MEMBERSHIP</h2>
 
         <div className="member-grid">
           {/* Card 1 */}

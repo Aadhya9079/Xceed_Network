@@ -1,0 +1,63 @@
+.membership-section {
+  background: #f2f2f2;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.membership-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.membership-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.membership-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.membership-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  top: -60px;
+  margin: 0;
+}
+
+.membership-card p {
+  font-size: 0.95rem;
+  color: #444;
+  padding: 0 18px 20px;
+  line-height: 1.6;
+  margin-top: -40px;
+}
+
+.membership-title{
+  font-weight: 800;
+}

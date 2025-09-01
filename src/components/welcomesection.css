@@ -1,5 +1,6 @@
 .welcome-section {
   width: 100%;
+  height: 900px;
   padding: clamp(40px, 6vw, 60px) clamp(12px, 3vw, 20px);
   display: flex;
   justify-content: center;
@@ -8,8 +9,7 @@
 
 .welcome-card {
   position: relative;
-  background:
-    linear-gradient(135deg, rgba(24, 25, 27, 0.95), rgba(44, 63, 109, 0.95)),
+  background: rgb(54, 69, 144)
     url("../assets/bg-image.jpg");
   background-size: cover;
   background-position: center;
@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: #012f53;         /* pure black card */
+  /* background: rgba(189, 190, 195, 0.35);    */
   border-radius: 15px;      /* match card radius */
   z-index: -1;              /* keep it behind the card */
   transform: translate(-15px, 15px); /* offset: left & bottom */
@@ -73,21 +73,22 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: clamp(16px, 3vw, 30px);
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: auto auto; */
+  /* gap: clamp(16px, 3vw, 30px); */
   align-items: center;
 }
 
 .welcome-img,
 .welcome-text {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.7;
+  /* line-height: 1.7; */
 }
 
 .welcome-img {
-  width: 100%;
-  max-width: clamp(240px, 36vw, 350px);
+  width: 100%;                  /* take full width of container */
+  max-width: 500px;             /* adjust max size */
+  height: 290px;                 /* maintain aspect ratio */
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
@@ -100,7 +101,7 @@
 .top-left      { grid-column: 1; grid-row: 1; justify-self: start; }
 .top-right     { grid-column: 2; grid-row: 1; justify-self: start; }
 .bottom-left   { grid-column: 1; grid-row: 2; justify-self: end; }
-.bottom-right  { grid-column: 2; grid-row: 2; justify-self: end; }
+.bottom-right  { grid-column: 2; grid-row: 2; justify-self: end; padding-top: 10px}
 
 /* Responsive collapse */
 @media (max-width: 992px) {

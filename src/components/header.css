@@ -25,10 +25,11 @@
 .xh-top-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px clamp(10px, 3vw, 28px);
+  justify-content: center;
+  padding-top: 10px;
   min-height: 76px;
   width: 100%;
+  gap: 600px;
 }
 
 .xh-brand {
@@ -41,10 +42,7 @@
 
 /* Bigger, responsive logo */
 .xh-logo {
-  width: 180px;                 /* same size as footer */
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 4px;
+  width: 100px;
 }
 
 .xh-right {
@@ -82,8 +80,8 @@
 }
 .xh-btn--primary { background: #D4AF37; color: #fff; }
 .xh-btn--primary:hover { background: #0a1f6e; transform: translateY(-1px); }
-.xh-btn--accent  { background: #D4AF37; color: #fff; }
-.xh-btn--accent:hover { background: #0a1f6e; transform: translateY(-1px); }
+.xh-btn--accent  { background: #0a1f6e; color: #fff; }
+.xh-btn--accent:hover { background:  #D4AF37; transform: translateY(-1px); }
 
 
 
@@ -115,11 +113,8 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;     /* centered; change to flex-start to left-align */
-  gap: 0;                      /* separators define spacing */
-  padding: 6px 4px 12px;
-
-  /* Slight right shift (optional): uncomment to nudge right */
-  /* padding-left: clamp(30px, 5vw, 90px); */
+  /* gap: 0;                      separators define spacing */
+  /* padding: 6px 4px; */
 }
 
 .xh-item {
@@ -294,4 +289,80 @@
 .xh-logo-link {
   display: inline-block;
   text-decoration: none;
+}
+/* Hamburger button */
+.xh-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10001;
+}
+.xh-hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #111;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+.xh-hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.xh-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.xh-hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hide nav on mobile until hamburger opens */
+@media (max-width: 720px) {
+  .xh-hamburger {
+    display: flex;
+  }
+  .xh-inner {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  .xh-inner.open {
+    display: flex;
+    animation: slideDown .3s ease;
+  }
+  .xh-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .xh-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 400px) {
+  .xh-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .xh-right {
+    flex-direction: column;
+    gap: 8px;
+  }
 }

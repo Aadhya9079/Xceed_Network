@@ -1,16 +1,22 @@
-.joinus-banner {
+.joinus-wrapper {
   position: fixed;
-  top: 50%;
-  left: 0;                      /* stick to left edge */
-  transform: translateY(-50%) rotate(180deg); /* vertical text bottom→top */
+  top: 60%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+/* Vertical Join Us button */
+.joinus-button {
   background: #d4b153;
   border-radius: 8px 0 0 8px;
   box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.25);
-  z-index: 1000;
   writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  cursor: pointer;
 }
 
-.joinus-banner a {
+.joinus-button a {
   display: block;
   padding: clamp(10px, 1.6vw, 14px) clamp(8px, 1.2vw, 12px);
   font-weight: bold;
@@ -21,7 +27,45 @@
   text-align: center;
 }
 
-.joinus-banner:hover {
-  background: #090909;
+.joinus-button:hover {
+  background: #0a1f6e;
   box-shadow: 10px 5px 10px rgba(248, 247, 247, 0.35);
+}
+
+/* Social icons hidden by default */
+.joinus-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+/* Reveal socials when wrapper is hovered */
+.joinus-wrapper:hover .joinus-socials {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.joinus-socials a {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #fff;
+  background: #111;
+  transition: 0.3s;
+}
+
+.joinus-socials a:hover {
+  background: #fff;
+  color: #111;
 }

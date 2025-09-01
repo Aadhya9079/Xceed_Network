@@ -34,7 +34,11 @@ export default function Connect() {
   return (
     <section className="connect-section" id="connect" ref={containerRef}>
       <div className="connect-header">
-  <h2 className="connect-title">Connect | Learn | Grow</h2>
+  <h2 class="connect-title">
+  <span class="blue">Connect</span> <span class="gold">|</span>
+  <span class="blue">Learn</span> <span class="gold">|</span>
+  <span class="blue">Grow</span>
+</h2>
   <p className="connect-sub">
     Build real relationships, gain practical knowledge, and scale with a
     community designed for ambitious founders and professionals.

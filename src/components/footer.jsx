@@ -43,11 +43,11 @@ const Footer = () => {
             </li>
             <li className="footer-contact">
               <span>📞</span>
-              <a href="tel:+14085670700">+1 408-567-0700</a>
+              <a href="tel:+14085670700">+91 9319395333</a>
             </li>
             <li className="footer-contact">
               <span>✉️</span>
-              <a href="mailto:global@tie.org">global@tie.org</a>
+              <a href="mailto:global@tie.org">Xceednetwork@gmail.com</a>
             </li>
           </ul>
         </div>

@@ -2,8 +2,12 @@
 .member-section {
   width: 100%;
   padding: clamp(48px, 7vw, 72px) clamp(12px, 3vw, 16px);
-  background: linear-gradient(135deg, #1d4972, #d4b153);
+ background: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),  /* transparent black overlay */
+    ;
+    background-color: #efebde;
   color: #ebedef;
+  /* url("../assets/Landing2.jpg") center/cover no-repeat */
 }
 
 /* Content container */
@@ -15,6 +19,7 @@
 /* Heading */
 .member-title {
   text-align: center;
+  color: black;
   font-weight: 800;
   letter-spacing: 0.3px;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -32,7 +37,7 @@
 /* Card */
 .member-card {
   display: block;
-background: radial-gradient(120% 120% at 20% -20%, #e9db9f 0%, #366195 60%, #04326b 100%);  
+background: #0a1f6e;  
 text-decoration: none;
   color: inherit;
   
@@ -61,6 +66,14 @@ text-decoration: none;
   line-height: 1.6;
   font-size: clamp(0.95rem, 1.6vw, 1rem);
   margin: 0 0 14px;
+}
+.member-card,
+.member-card:hover,
+.member-card:focus,
+.member-card:active,
+.member-card:visited {
+  color: #ebedef; /* always white */
+  text-decoration: none; /* no underline */
 }
 
 .member-cta {

@@ -7,11 +7,13 @@ import LandingPage from "./components/LandingPage";
 import WelcomeSection from "./components/Welcomesection";
 import Membership from "./components/Membership";
 import Catalogue from "./components/Catalogue";
-import Services from "./components/Services";
+import Community from "./components/Community";
 import Connect from "./components/Connect";
 import Footer from "./components/Footer";
 import JoinUs from "./components/JoinUs";
 import ScrollOnTop from "./components/ScrollOnTop";
+import Events from "./components/Events"
+import Reviews from "./components/reviews"
 
 // Auth Pages
 import Login from "./components/Login";
@@ -33,8 +35,10 @@ export default function App() {
                 <WelcomeSection />
                 <Membership />
                 <Catalogue />
-                <Services />
+                <Community />
+                <Reviews/>
                 <Connect />
+                <Events/>
               </main>
 
               <Footer />

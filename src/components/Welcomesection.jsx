@@ -29,7 +29,7 @@ function WelcomeSection() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            Welcome to Xceed Network — where ambitious entrepreneurs, startups, and professionals come together to connect, collaborate, and grow. Join a thriving business community built to support your journey with powerful networking, expert insights, and real growth opportunities. Whether you're launching, scaling, or leading, Xceed empowers you with the resources, relationships, and reach you need to move forward with confidence. Experience the strength of collective growth through a platform designed to help you Xceed.
+            Welcome to Xceed Network, where ambitious entrepreneurs, startups, and professionals come together to connect, collaborate, and grow. Join a thriving business community built to support your journey with powerful networking, expert insights, and real growth opportunities. Whether you're launching, scaling, or leading, Xceed empowers you with the resources, relationships, and reach you need to move forward with confidence. Experience the strength of collective growth through a platform designed to help you Xceed.
           </motion.p>
 
           {/* Text2 */}

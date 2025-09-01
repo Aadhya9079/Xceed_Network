@@ -20,7 +20,7 @@ export default function Catalogue() {
   return (
     <section className="catalogue-section" id="catalogue">
       <div className="catalogue-container">
-        <h2 className="catalogue-title">Catalogue</h2>
+        <h2 className="catalogue-title">CATALOGUE</h2>
 
         <div className="catalogue-ticker" aria-label="Scrolling catalogue banners">
           <div className="catalogue-track">
@@ -34,7 +34,7 @@ export default function Catalogue() {
                 <div className="banner-content">
                   <h3>{b.title}</h3>
                   <p>{b.text}</p>
-                  <span className="banner-cta">Learn More</span>
+                  <span className="catalogue-cta">Learn More</span>
                 </div>
               </a>
             ))}
