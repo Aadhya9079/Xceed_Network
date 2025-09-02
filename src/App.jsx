@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Core Components
 import Header from "./components/header";
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/landingpage";
 import WelcomeSection from "./components/Welcomesection";
 import Membership from "./components/Membership";
 import Catalogue from "./components/Catalogue";
