@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Core Components
-import Header from "./components/Header";
+import Header from "./components/header";
 import LandingPage from "./components/LandingPage";
 import WelcomeSection from "./components/Welcomesection";
 import Membership from "./components/Membership";
