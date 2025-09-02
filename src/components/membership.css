@@ -1,14 +1,23 @@
 /* Wrapper */
+/* Wrapper */
 .member-section {
   width: 100%;
   padding: clamp(48px, 7vw, 72px) clamp(12px, 3vw, 16px);
- background: 
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),  /* transparent black overlay */
-    ;
-    background-color: #efebde;
+
+  /* Background image + overlay */
+  background: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), 
+    url("../assets/Membership.jpg") center/cover no-repeat;
+
+  /* remove fixed, so it scrolls with section */
+  background-size: cover;   /* ensure it always covers */
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: #ebedef;
-  /* url("../assets/Landing2.jpg") center/cover no-repeat */
 }
+
+
 
 /* Content container */
 .member-container {

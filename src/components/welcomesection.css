@@ -44,14 +44,14 @@
       45deg,
       transparent 0px,
       transparent 24px,
-      rgba(255, 215, 80, 0.6) 26px,
+      rgba(118, 115, 115, 0.6) 26px,
       transparent 28px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0px,
       transparent 24px,
-      rgba(255, 215, 80, 0.6) 26px,
+      rgba(124, 121, 121, 0.6) 26px,
       transparent 28px
     );
   opacity: 0.4;   /* bold yellow arrows */

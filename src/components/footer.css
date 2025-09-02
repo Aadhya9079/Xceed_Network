@@ -1,6 +1,9 @@
 /* ===== Footer Base ===== */
 .footer {
-background: linear-gradient(135deg, #1d4972, #d4b153);
+background-color: #5a5d9e;
+border-top: 3px solid #d4af37;
+
+
   color: #eaeaea;
   font-size: 0.95rem;
 }
@@ -31,7 +34,7 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
   display: inline-block;
   margin-bottom: 14px;
   padding-bottom: 4px;
-  color: #fff;
+  color: #f5f3f3;
   font-size: 1.1rem;
 }
 
@@ -40,13 +43,13 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
   list-style: none;
   padding: 0;
   margin: 0;
-  color: #ddd;
+  color: #d01313;
 }
 .footer-container ul li {
   margin-bottom: 10px;
 }
 .footer-container ul li a {
-  color: #ddd;
+  color: #f3f4f7;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -61,7 +64,7 @@ background: linear-gradient(135deg, #1d4972, #d4b153);
   align-items: flex-start;
   gap: 8px;
   margin-bottom: 12px;
-  color: #ddd;
+  color: #f1f1f4;
 }
 .footer-contact span {
   color: #D4AF37;

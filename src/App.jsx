@@ -9,7 +9,7 @@ import Membership from "./components/Membership";
 import Catalogue from "./components/Catalogue";
 import Community from "./components/Community";
 import Connect from "./components/Connect";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import JoinUs from "./components/JoinUs";
 import ScrollOnTop from "./components/ScrollOnTop";
 import Events from "./components/Events"
