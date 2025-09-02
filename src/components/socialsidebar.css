@@ -1,0 +1,50 @@
+/* Container fixed at side */
+.social-sidebar {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+
+/* Base style (smaller size) */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff; /* default white */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Pulse animation (zoom in & out continuously) */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* Hover boost effect */
+.social-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* ==== Individual background colors (default: white, can customize) ==== */
+.linkedin-bg { background: #ffffff; }
+.facebook-bg { background: #ffffff; }
+.instagram-bg { background: #ffffff; }
+.twitter-bg { background: #ffffff; }
