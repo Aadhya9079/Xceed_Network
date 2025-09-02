@@ -1,5 +1,5 @@
 import React from "react"
-import "./JoinUs.css"
+import "./joinus.css"
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 
