@@ -10,6 +10,7 @@ import Twitter from "../assets/twitter.png";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null); // for mobile dropdowns
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
@@ -82,12 +83,18 @@ export default function Header() {
         {/* Row 2 - nav */}
         <div className={`xh-inner ${menuOpen ? "open" : ""}`}>
           <nav className="xh-nav" aria-label="Primary">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <div className="xh-item" key={item.label}>
-                <button className="xh-linkBtn" type="button">
+                <button
+                  className="xh-linkBtn"
+                  type="button"
+                  onClick={() =>
+                    setActiveDropdown(activeDropdown === index ? null : index)
+                  }
+                >
                   <span className="xh-linkText">{item.label}</span>
                   <svg
-                    className="xh-caret"
+                    className={`xh-caret ${activeDropdown === index ? "rotated" : ""}`}
                     viewBox="0 0 24 24"
                     width="14"
                     height="14"
@@ -95,7 +102,11 @@ export default function Header() {
                     <polygon points="6,9 12,15 18,9" fill="black" />
                   </svg>
                 </button>
-                <ul className="xh-submenu">
+                <ul
+                  className={`xh-submenu ${
+                    activeDropdown === index ? "open" : ""
+                  }`}
+                >
                   {item.sub.map((sub, i) => (
                     <li key={i}>
                       <a href="#" className="xh-subLink">{sub}</a>

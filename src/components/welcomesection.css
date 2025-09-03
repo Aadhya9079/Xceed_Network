@@ -9,8 +9,7 @@
 
 .welcome-card {
   position: relative;
-  background: rgb(54, 69, 144)
-    url("../assets/bg-image.jpg");
+  background: rgb(54, 69, 144) url("../assets/bg-image.jpg");
   background-size: cover;
   background-position: center;
   padding: clamp(20px, 5vw, 50px);
@@ -28,7 +27,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  /* background: rgba(189, 190, 195, 0.35);    */
   border-radius: 15px;      /* match card radius */
   z-index: -1;              /* keep it behind the card */
   transform: translate(-15px, 15px); /* offset: left & bottom */
@@ -54,7 +52,7 @@
       rgba(124, 121, 121, 0.6) 26px,
       transparent 28px
     );
-  opacity: 0.4;   /* bold yellow arrows */
+  opacity: 0.4;
   pointer-events: none;
   z-index: 0;
 }
@@ -73,22 +71,18 @@
   position: relative;
   z-index: 1;
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: auto auto; */
-  /* gap: clamp(16px, 3vw, 30px); */
   align-items: center;
 }
 
 .welcome-img,
 .welcome-text {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  /* line-height: 1.7; */
 }
 
 .welcome-img {
-  width: 100%;                  /* take full width of container */
-  max-width: 500px;             /* adjust max size */
-  height: 290px;                 /* maintain aspect ratio */
+  width: 100%;
+  max-width: 500px;
+  height: 290px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
@@ -101,9 +95,9 @@
 .top-left      { grid-column: 1; grid-row: 1; justify-self: start; }
 .top-right     { grid-column: 2; grid-row: 1; justify-self: start; }
 .bottom-left   { grid-column: 1; grid-row: 2; justify-self: end; }
-.bottom-right  { grid-column: 2; grid-row: 2; justify-self: end; padding-top: 10px}
+.bottom-right  { grid-column: 2; grid-row: 2; justify-self: end; padding-top: 10px }
 
-/* Responsive collapse */
+/* Tablet responsiveness */
 @media (max-width: 992px) {
   .welcome-diagonal {
     grid-template-columns: 1fr;
@@ -111,10 +105,51 @@
     text-align: center;
   }
   .top-left, .top-right, .bottom-left, .bottom-right {
-    grid-column: auto; grid-row: auto; justify-self: center;
+    grid-column: auto; 
+    grid-row: auto; 
+    justify-self: center;
   }
   .welcome-img {
     margin: 0 auto 14px;
     max-width: min(90%, 420px);
+  }
+}
+
+/* ===== Mobile only (≤768px) ===== */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 20px 12px;
+    height: auto; /* remove forced height */
+  }
+
+  .welcome-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .welcome-diagonal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* Reorder for stacked flow */
+  .top-left { order: 1; }     /* Image 1 */
+  .top-right { order: 2; }    /* Text 1 */
+  .bottom-right { order: 3; } /* Image 2 */
+  .bottom-left { order: 4; }  /* Text 2 */
+
+  .welcome-img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 8px;
   }
 }

@@ -11,7 +11,6 @@ import Community from "./components/Community";
 import Connect from "./components/Connect";
 import Footer from "./components/Footer";
 import JoinUs from "./components/JoinUs";
-import ScrollOnTop from "./components/ScrollOnTop";
 import Events from "./components/Events"
 import Reviews from "./components/reviews"
 
@@ -43,7 +42,6 @@ export default function App() {
 
               <Footer />
               <JoinUs />
-              <ScrollOnTop threshold={40} scrollTargetSelector=".page-wrapper" />
             </>
           }
         />

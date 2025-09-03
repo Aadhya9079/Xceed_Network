@@ -6,7 +6,7 @@
 
   /* Background image + overlay */
   background: 
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), 
+    linear-gradient(rgba(236, 231, 231, 0.35), rgba(0,0,0,0.55)), 
     url("../assets/Membership.jpg") center/cover no-repeat;
 
   /* remove fixed, so it scrolls with section */
@@ -46,21 +46,21 @@
 /* Card */
 .member-card {
   display: block;
-background: #0a1f6e;  
+background:cross-fade(40px);  
 text-decoration: none;
   color: inherit;
   
   border-radius: 18px;
-  box-shadow: 0 14px 40px rgba(5, 39, 141, 0.5);
+  box-shadow: 0 14px 40px rgb(255, 255, 255);
   transition: transform .22s ease, box-shadow .22s ease;
   position: relative;
   min-height: 220px;
 }
 
-.member-card:hover {
+/* .member-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.9), 0 14px 40px rgba(0,0,0,0.5);
-}
+} */
 
 .member-card-body { padding: clamp(16px, 2.5vw, 22px); }
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./catalogue.css";
 
 const banners = [
@@ -14,16 +15,78 @@ const banners = [
 ];
 
 export default function Catalogue() {
-  // Duplicate list for seamless looping
-  const loopItems = [...banners, ...banners];
+  const loopItems = [...banners, ...banners]; // duplicate for infinite scroll
+  const trackRef = useRef(null);
+  const [offset, setOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStart = useRef(0);
+  const lastOffset = useRef(0);
+
+  // Auto-scroll
+  useEffect(() => {
+    let animationId;
+    const speed = 0.5; // lower = slower
+
+    const animate = () => {
+      if (!isDragging) {
+        setOffset((prev) => (prev - speed) % (trackRef.current.scrollWidth / 2));
+      }
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, [isDragging]);
+
+  // Apply transform
+  useEffect(() => {
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(${offset}px)`;
+    }
+  }, [offset]);
+
+  // Drag handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    dragStart.current = e.clientX;
+    lastOffset.current = offset;
+  };
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const delta = e.clientX - dragStart.current;
+    setOffset(lastOffset.current + delta);
+  };
+  const handleMouseUp = () => setIsDragging(false);
+
+  // Touch handlers (mobile swipe)
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    dragStart.current = e.touches[0].clientX;
+    lastOffset.current = offset;
+  };
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const delta = e.touches[0].clientX - dragStart.current;
+    setOffset(lastOffset.current + delta);
+  };
+  const handleTouchEnd = () => setIsDragging(false);
 
   return (
     <section className="catalogue-section" id="catalogue">
       <div className="catalogue-container">
         <h2 className="catalogue-title">CATALOGUE</h2>
 
-        <div className="catalogue-ticker" aria-label="Scrolling catalogue banners">
-          <div className="catalogue-track">
+        <div
+          className="catalogue-ticker"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="catalogue-track" ref={trackRef}>
             {loopItems.map((b, i) => (
               <a
                 className={`catalogue-banner ${['banner-a','banner-b','banner-c'][i % 3]}`}
@@ -40,8 +103,6 @@ export default function Catalogue() {
             ))}
           </div>
         </div>
-
-        {/* tip: adjust speed by changing --ticker-speed in CSS */}
       </div>
     </section>
   );
