@@ -15,20 +15,19 @@ import Events from "./components/Events"
 import Reviews from "./components/reviews"
 
 // Auth Pages
-import Login from "./components/Login";
+import Login from "./components/LoginPage";
 import JoinXceed from "./components/JoinXceed";
 
 export default function App() {
   return (
     <Router>
-      <Header />
-
       <Routes>
         {/* === Homepage layout === */}
         <Route
           path="/"
           element={
             <>
+            <Header />
               <main>
                 <LandingPage />
                 <WelcomeSection />

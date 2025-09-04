@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
-import "./header.css";
+import { useEffect, useState } from "react"
+import "./header.css"
 
-import Logo from "../assets/logo.png";
-import Instagram from "../assets/instagram.png";
-import Facebook from "../assets/facebook.png";
-import Linkedin from "../assets/linkedin.png";
-import Twitter from "../assets/twitter.png";
+import Logo from "../assets/logo.png"
+import Instagram from "../assets/instagram.png"
+import Facebook from "../assets/facebook.png"
+import Linkedin from "../assets/linkedin.png"
+import Twitter from "../assets/twitter.png"
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); // for mobile dropdowns
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => setIsScrolled(window.scrollY > 10)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   const navItems = [
     { label: "About", sub: ["Xceed Team","Pillars Of Xceed", "Xceed Chairman & CEO", "Contact Us"] },
-    { label: "Our Chapters", sub: ["Chapter 1", "Chapter 2", "Chapter 3"] },
-    { label: "Membership", sub: ["Plans", "Pricing", "FAQ"] },
-    { label: "Our Events", sub: ["Workshops", "Seminars", "Meetups"] },
-    { label: "Catalogue", sub: ["Digital Tools", "Resources", "Templates"] },
+    { label: "Our Chapters" },
+    { label: "Membership" },
+    { label: "Our Events" },
+    { label: "Catalogue" },
     { label: "Our Community", sub: ["Member profile", "Mentors", "Partners", "Investors"] },
-    { label: "Our Programs", sub: ["Xceed Domestic Angels", "Xceed U", "Xceed Enterprenuers", "Xceed Nature", "Xceed Awards", "Xceed Women"] },
-  ];
+    { label: "Our Programs", sub: ["XC-Connect", "XC-Edge", "XC-Digital", "XC-Rise", "XC-Campus", "XC-HerRise", "XC-Capital", "XC-Honor", "XC-Synergy"] },
+  ]
 
   return (
     <>
@@ -38,6 +38,7 @@ export default function Header() {
             <a href="/" className="xh-logo-link">
               <img src={Logo} alt="Xceed Network" className="xh-logo" />
             </a>
+            <p className="para">India’s Fastest Growing<br></br> Business Networking<br></br> Ecosystem<br></br><span className="span">Where Businesses Meet Growth</span></p> 
           </div>
 
           <div className="xh-right">
@@ -85,34 +86,38 @@ export default function Header() {
           <nav className="xh-nav" aria-label="Primary">
             {navItems.map((item, index) => (
               <div className="xh-item" key={item.label}>
-                <button
-                  className="xh-linkBtn"
-                  type="button"
-                  onClick={() =>
-                    setActiveDropdown(activeDropdown === index ? null : index)
-                  }
-                >
-                  <span className="xh-linkText">{item.label}</span>
-                  <svg
-                    className={`xh-caret ${activeDropdown === index ? "rotated" : ""}`}
-                    viewBox="0 0 24 24"
-                    width="14"
-                    height="14"
-                  >
-                    <polygon points="6,9 12,15 18,9" fill="black" />
-                  </svg>
-                </button>
-                <ul
-                  className={`xh-submenu ${
-                    activeDropdown === index ? "open" : ""
-                  }`}
-                >
-                  {item.sub.map((sub, i) => (
-                    <li key={i}>
-                      <a href="#" className="xh-subLink">{sub}</a>
-                    </li>
-                  ))}
-                </ul>
+                {item.sub ? (
+                  <>
+                    <button
+                      className="xh-linkBtn"
+                      type="button"
+                      onClick={() =>
+                        setActiveDropdown(activeDropdown === index ? null : index)
+                      }
+                    >
+                      <span className="xh-linkText">{item.label}</span>
+                      <svg
+                        className={`xh-caret ${activeDropdown === index ? "rotated" : ""}`}
+                        viewBox="0 0 24 24"
+                        width="14"
+                        height="14"
+                      >
+                        <polygon points="6,9 12,15 18,9" fill="black" />
+                      </svg>
+                    </button>
+                    <ul
+                      className={`xh-submenu ${activeDropdown === index ? "open" : ""}`}
+                    >
+                      {item.sub.map((sub, i) => (
+                        <li key={i}>
+                          <a href="#" className="xh-subLink">{sub}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <a href="#" className="xh-linkText">{item.label}</a>
+                )}
               </div>
             ))}
           </nav>
@@ -121,5 +126,5 @@ export default function Header() {
 
       <div className="xh-header-spacer" />
     </>
-  );
+  )
 }

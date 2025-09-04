@@ -19,7 +19,7 @@
 }
 
 /* Spacer to offset fixed header */
-.xh-header-spacer { height: 120px; }
+.xh-header-spacer { height: 160px; }
 
 /* ===== Row 1 ===== */
 .xh-top-row {
@@ -38,7 +38,17 @@
 }
 .xh-logo {
   width: clamp(120px, 18vw, 180px);
-  height: auto;
+  height: 100px;
+  width: 130px;
+}
+.para{
+  font-size: 14px;
+line-height: 1.8;
+}
+.span{
+  margin-top: 5px;
+  display: block;
+  font-size: 12px;
 }
 
 .xh-right {
@@ -76,9 +86,9 @@
 
 /* ===== Nav Row ===== */
 .xh-inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 8px 20px;
+  max-width: 100%;
+  /* margin: 0 auto; */
+  /* padding: 8px 20px; */
 }
 
 .xh-nav {
@@ -86,15 +96,39 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
+  background-color: #0a1f6e;
+  color: white;
+  height: 58px;
+  gap: 0; /* equal spacing handled by padding in items */
 }
 
-.xh-item { position: relative; }
+.xh-item {
+  position: relative;
+  padding: 0 20px; /* equal horizontal spacing */
+}
+
 .xh-item:not(:last-child)::after {
   content: "";
-  width: 1px; height: 18px;
-  background:#050505;
-  margin-left: 18px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background: #ffffff; /* white separator line */
+}
+
+.xh-linkText,
+.xh-subLink {
+  color: #fff;      /* white text */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.xh-linkText:hover,
+.xh-subLink:hover {
+  color: #ddd;      /* optional: lighter on hover */
 }
 
 /* ===== Nav Links ===== */
@@ -105,28 +139,33 @@
   padding: 8px 12px;
   background: transparent;
   cursor: pointer;
-  color: #09090a;
+  color: #fff;
   font-weight: 700;
-  border-radius: 20px;
-  transition: background .2s ease, transform .15s ease;
+  border: none;
 }
 .xh-linkBtn:hover {
   background: rgba(14, 15, 13, 0.08);
   color: #043175;
   transform: translateY(-1px);
 }
-.xh-caret { transition: transform 0.2s ease; }
-.xh-caret.rotated { transform: rotate(180deg); }
+.xh-caret {
+  color: #fff; /* make dropdown icon white */
+  transition: transform 0.2s ease;
+}
+.xh-caret.rotated { 
+  transform: rotate(180deg); 
+}
 
 /* ===== Submenu ===== */
 .xh-submenu {
+  list-style: none; /* remove bullets */
+  margin: 0;
+  padding: 8px 0;
   position: absolute;
   top: 100%; left: 0;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 6px;
-  padding: 8px 0;
-  margin-top: 6px;
   min-width: 180px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   display: none;
@@ -198,7 +237,7 @@
   }
   .xh-logo { width: 120px; margin: 0 auto; }
   .xh-auth {
-    flex-direction: row;        /* side by side */
+    flex-direction: row;
     justify-content: center;
     gap: 8px;
     width: 100%;
