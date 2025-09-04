@@ -69,7 +69,7 @@
 .carousel-caption h2,
 .carousel-caption h3 {
   margin: 0 0 clamp(10px, 2.5vw, 18px);
-  color: #ffffff;
+  color: #dcdbdb;
   font-weight: 800;
   line-height: 1.2;
   font-size: clamp(1.8rem, 4.2vw, 3.2rem);
