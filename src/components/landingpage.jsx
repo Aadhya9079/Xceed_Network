@@ -1,9 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./landingpage.css";
 
-import bgImage1 from "../assets/image1.jpg";
-import landing from "../assets/landing.jpeg";
-import landing1 from "../assets/landing1.jpeg";
+import slide1 from "../assets/slide1.jpg";
+import slide2 from "../assets/slide2.jpg";
+import slide3 from "../assets/slide3.jpg";
 
 export default function LandingPage() {
   return (
@@ -15,34 +15,31 @@ export default function LandingPage() {
         pause={false}          // always autoplay
       >
         <Carousel.Item className="overlay">
-          <img className="d-block w-100 carousel-img" src={bgImage1} alt="Slide 1" />
+          <img className="d-block w-100 carousel-img" src={slide1} alt="Slide 1" />
           <div className="carousel-caption">
-            <h1 className="caption-title">Entrepreneur’s Organization</h1>
+            <h3 className="caption-title">Empowering Your Business with Smart Solutions</h3>
             <p className="caption-body">
-              Xceed network of entrepreneurs empowering leaders through peer
-              learning, mentorship, and growth opportunities.
+             Practical strategies and tools to help you grow, scale, and succeed in today’s competitive market.
             </p>
           </div>
         </Carousel.Item>
 
         <Carousel.Item className="overlay-light-blue">
-          <img className="d-block w-100 carousel-img" src={landing} alt="Slide 2" />
+          <img className="d-block w-100 carousel-img" src={slide2} alt="Slide 2" />
           <div className="carousel-caption">
-            <h2 className="caption-title">Digital solution for a smart business</h2>
+            <h3 className="caption-title">Digital Visibility That Drives Growth</h3>
             <p className="caption-body">
-              Smart digital solutions to streamline, scale, and simplify your
-              business growth journey.
+              From online directories to branding support, Xceed helps your business get discovered and recognized.
             </p>
           </div>
         </Carousel.Item>
 
         <Carousel.Item className="overlay">
-          <img className="d-block w-100 carousel-img" src={landing1} alt="Slide 3" />
+          <img className="d-block w-100 carousel-img" src = {slide3} alt="Slide 3" />
           <div className="carousel-caption">
-            <h3 className="caption-title">Empowering Your Business With Smart Solutions</h3>
+            <h3 className="caption-title">Turning Connections into Collaborations</h3>
             <p className="caption-body">
-              Empowering your business with smart, scalable solutions for growth,
-              efficiency, and long-term success.
+            Xceed Network connects entrepreneurs, professionals, and business owners to create lasting opportunities.
             </p>
           </div>
         </Carousel.Item>

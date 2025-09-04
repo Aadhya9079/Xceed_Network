@@ -1,6 +1,6 @@
 .welcome-section {
   width: 100%;
-  height: 900px;
+  height: 1000px;
   padding: clamp(40px, 6vw, 60px) clamp(12px, 3vw, 20px);
   display: flex;
   justify-content: center;
@@ -73,7 +73,20 @@
   display: grid;
   align-items: center;
 }
+.welcome-diagonal p {
+ font-size: 15px;
+}
 
+.vision{
+  text-align: right;
+  color: #D4AF37;
+}
+.mission{
+  color: #D4AF37;
+}
+.last-p{
+  padding: 20px;
+}
 .welcome-img,
 .welcome-text {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -143,7 +156,6 @@
 
   .welcome-img {
     max-width: 90%;
-    height: auto;
     margin: 0 auto;
   }
 

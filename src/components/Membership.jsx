@@ -6,13 +6,13 @@ export default function Membership() {
   return (
     <section className="member-section" id="membership">
       <div className="member-container">
-        <h2 className="member-title">EXPLORE OUR MEMBERSHIP</h2>
+        <h2 className="member-title">WHY JOIN XCEED </h2>
 
         <div className="member-grid">
           {/* Card 1 */}
           <a className="member-card" href="#xceed-network" aria-label="XceedNetwork">
             <div className="member-card-body">
-              <h3 className="member-card-title">XceedNetwork</h3>
+              <h3 className="member-card-title">Our Programs </h3>
               <p className="member-card-text">
                 A thriving community where founders, leaders, and professionals
                 connect for peer learning, mentorship.
@@ -24,7 +24,7 @@ export default function Membership() {
           {/* Card 2 */}
           <a className="member-card" href="#achievements" aria-label="Our Achievements">
             <div className="member-card-body">
-              <h3 className="member-card-title">Our Achievements</h3>
+              <h3 className="member-card-title">Our Services</h3>
               <p className="member-card-text">
                 Celebrating milestones made possible by our members: 250+ collaborations,
                 90% satisfaction, 30+ funded initiatives.
@@ -36,7 +36,7 @@ export default function Membership() {
           {/* Card 3 */}
           <a className="member-card" href="#benefits" aria-label="Benefits of joining XceedNetworks">
             <div className="member-card-body">
-              <h3 className="member-card-title">Benefits of joining XceedNetworks</h3>
+              <h3 className="member-card-title">Our Benefits</h3>
               <p className="member-card-text">
                 Unlock warm intros, playbooks, tools, visibility, and brand lift — compounding
                 value from day one.
