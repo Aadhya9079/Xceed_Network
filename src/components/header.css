@@ -34,21 +34,33 @@
 
 .xh-brand {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* logo and text block same height */
 }
+
 .xh-logo {
-  width: clamp(120px, 18vw, 180px);
-  height: 100px;
   width: 130px;
+  height: 100px; /* fixed logo height */
 }
-.para{
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push para to top, span to bottom */
+  /* margin-left: 12px; */
+}
+
+.para {
   font-size: 14px;
-line-height: 1.8;
+  word-spacing: 12px;
+  line-height: 1.7;
+  margin: 0;
 }
-.span{
-  margin-top: 5px;
-  display: block;
+
+.span {
   font-size: 12px;
+  margin: 0;       /* remove manual margin */
+  align-self: flex-start; 
+  word-spacing: 0px;
 }
 
 .xh-right {

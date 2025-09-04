@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "./LoginPage.css"
+import "./loginPage.css"
 
 export default function LoginPage() {
   const [slideIndex, setSlideIndex] = useState(0)

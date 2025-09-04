@@ -28,10 +28,11 @@
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  width: 250px;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s;
+  width: calc(21% - 30px);   /* 4 per row on large screens */
+  min-width: 250px;
 }
 
 .community-card:hover {

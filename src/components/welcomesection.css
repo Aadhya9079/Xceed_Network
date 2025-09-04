@@ -66,6 +66,9 @@
   text-align: center;
 }
 
+.w-heading{
+  color:#D4AF37;
+}
 /* 2x2 grid for diagonal composition */
 .welcome-diagonal {
   position: relative;

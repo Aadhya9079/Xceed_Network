@@ -6,6 +6,7 @@ import Instagram from "../assets/instagram.png"
 import Facebook from "../assets/facebook.png"
 import Linkedin from "../assets/linkedin.png"
 import Twitter from "../assets/twitter.png"
+import { sub } from "framer-motion/client"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,13 +21,14 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { label: "About", sub: ["Xceed Team","Pillars Of Xceed", "Xceed Chairman & CEO", "Contact Us"] },
-    { label: "Our Chapters" },
-    { label: "Membership" },
-    { label: "Our Events" },
-    { label: "Catalogue" },
-    { label: "Our Community", sub: ["Member profile", "Mentors", "Partners", "Investors"] },
+    { label: "About Us", sub: ["Who We Are","Vision & Mission", "The Xceed Story", "Leadership Team", "Impact & Reach"] },
     { label: "Our Programs", sub: ["XC-Connect", "XC-Edge", "XC-Digital", "XC-Rise", "XC-Campus", "XC-HerRise", "XC-Capital", "XC-Honor", "XC-Synergy"] },
+    { label: "Membership", sub: ["Why Join Xceed?", "Member Benefits", "Plans & Pricing", "Success Stories"] },
+    { label: "Events", sub: ["Upcoming Events", "	Past Highlights", "Webinars & Workshops", "	Annual Xceed Summit"]},
+    { label: "Community", sub: ["Member Directory", "Xceed Chapters(City-Wise)", "The Power of the Xceed Community", "Testimonials"] },
+    { label: "Collaborate", sub: ["Influencer Partner Program", "Community Partnerships", "Corporate & Association Collaborations", "	Media & PR Partners"] },
+    { label: "Resources", sub: ["Blog & Insights", "Startup Guides", "Mentorship Resources", "FAQs"] },
+    {label: "Contact"},
   ]
 
   return (
@@ -35,10 +37,10 @@ export default function Header() {
         {/* Row 1 */}
         <div className="xh-top-row">
           <div className="xh-brand">
-            <a href="/" className="xh-logo-link">
+            <div><a href="/" className="xh-logo-link">
               <img src={Logo} alt="Xceed Network" className="xh-logo" />
-            </a>
-            <p className="para">India’s Fastest Growing<br></br> Business Networking<br></br> Ecosystem<br></br><span className="span">Where Businesses Meet Growth</span></p> 
+            </a></div>
+            <div className = "paragraph"><p className="para">India’s Fastest Growing<br></br> Business Networking<br></br> Ecosystem<br></br><span className="span">Where Businesses Meet Growth</span></p></div> 
           </div>
 
           <div className="xh-right">

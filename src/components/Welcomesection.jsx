@@ -7,7 +7,7 @@ function WelcomeSection() {
   return (
     <section className="welcome-section">
       <div className="welcome-card">
-        <h2 className="welcome-heading">Welcome to XceedNetwork</h2>
+        <h2 className="welcome-heading">The XCEED <span className="w-heading">JOURNEY</span></h2>
 
         <div className="welcome-diagonal">
           {/* Img1 */}
