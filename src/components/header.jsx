@@ -7,6 +7,7 @@ import Facebook from "../assets/facebook.png"
 import Linkedin from "../assets/linkedin.png"
 import Twitter from "../assets/twitter.png"
 import { sub } from "framer-motion/client"
+import HeaderImage from "../assets/headerImage2.jpeg"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -40,22 +41,23 @@ export default function Header() {
             <div><a href="/" className="xh-logo-link">
               <img src={Logo} alt="Xceed Network" className="xh-logo" />
             </a></div>
-            <div className = "paragraph"><p className="para">India’s Fastest Growing<br></br> Business Networking<br></br> Ecosystem<br></br><span className="span">Where Businesses Meet Growth</span></p></div> 
+            <div className = "paragraph">
+              <img src = {HeaderImage} alt="headerImage" className = "headerImage"></img></div> 
           </div>
 
           <div className="xh-right">
             {/* Socials */}
             <div className="xh-social">
-              <a href="https://www.linkedin.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer">
+              <a href="http://www.linkedin.com/in/pooja-arora-179159377" target="_blank" rel="noopener noreferrer">
                 <img src={Linkedin} alt="LinkedIn" className="xh-social-icon linkedin" />
               </a>
-              <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61578327130803" target="_blank" rel="noopener noreferrer">
                 <img src={Facebook} alt="Facebook" className="xh-social-icon facebook"/>
               </a>
-              <a href="https://www.instagram.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/xceednetwork/" target="_blank" rel="noopener noreferrer">
                 <img src={Instagram} alt="Instagram" className="xh-social-icon instagram" />
               </a>
-              <a href="https://twitter.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/xceednetwork" target="_blank" rel="noopener noreferrer">
                 <img src={Twitter} alt="Twitter" className="xh-social-icon twitter" />
               </a>
             </div>
@@ -104,7 +106,7 @@ export default function Header() {
                         width="14"
                         height="14"
                       >
-                        <polygon points="6,9 12,15 18,9" fill="black" />
+                        <polygon points="6,9 12,15 18,9" fill="white" />
                       </svg>
                     </button>
                     <ul

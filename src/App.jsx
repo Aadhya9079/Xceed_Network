@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import JoinUs from "./components/JoinUs";
 import Events from "./components/Events"
 import Reviews from "./components/reviews"
+import BecomeMember from "./components/BecomeMember"
 
 // Auth Pages
 import Login from "./components/LoginPage";
@@ -35,6 +36,7 @@ export default function App() {
                 <Catalogue />
                 <Community />
                 <Reviews/>
+                <BecomeMember/>
                 <Connect />
                 <Events/>
               </main>

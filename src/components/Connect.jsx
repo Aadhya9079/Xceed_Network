@@ -3,7 +3,8 @@ import "./connect.css";
 
 import imgConnect from "../assets/connect.jpg"; // use JPG here
 import imgLearn from "../assets/learn.jpg";
-import imgGrow from "../assets/grow.jpg";
+import imgGrow from "../assets/grow.jpg"
+import collaborate from "../assets/collaborate.jpg";
 
 export default function Connect() {
   const containerRef = useRef(null);
@@ -36,12 +37,11 @@ export default function Connect() {
       <div className="connect-header">
   <h2 class="connect-title">
   <span class="blue">Connect</span> <span class="gold">|</span>
-  <span class="blue">Learn</span> <span class="gold">|</span>
+  <span class="blue">Learn</span> <span class="gold">|</span>  <span class="blue">Collaborate</span> <span class="gold">|</span>
   <span class="blue">Grow</span>
 </h2>
   <p className="connect-sub">
-    Build real relationships, gain practical knowledge, and scale with a
-    community designed for ambitious founders and professionals.
+   At Xceed Network, we believe success is not a solo journey—it’s a collective effort. Our platform is built to empower entrepreneurs and professionals at every stage of their business journey. From forging powerful connections, gaining actionable knowledge, and scaling your ventures, to building partnerships that open new doors—Xceed is where your growth story truly begins.
   </p>
 </div>
 
@@ -53,10 +53,7 @@ export default function Connect() {
           <div className="connect-card-body">
             <h3 className="connect-card-title">Connect</h3>
             <p className="connect-card-text">
-              At Xceed Network, we believe that powerful connections spark
-              powerful opportunities. We bring together entrepreneurs, startups,
-              freelancers, and professionals to build a vibrant ecosystem where
-              collaboration fuels innovation.
+              Opportunities begin with the right people. Xceed connects entrepreneurs, startups, corporate leaders, freelancers, and investors in a vibrant ecosystem designed to spark conversations, referrals, and collaborations. With access to diverse industries and regions, you’ll never network alone—you’ll always connect with purpose.
             </p>
           </div>
         </article>
@@ -67,10 +64,17 @@ export default function Connect() {
           <div className="connect-card-body">
             <h3 className="connect-card-title">Learn</h3>
             <p className="connect-card-text">
-              Growth begins with knowledge. Through expert-led sessions, peer
-              learning, and real-world insights, we help you gain the skills and
-              strategies needed to scale your business with confidence and
-              clarity.
+              Knowledge fuels innovation. At Xceed, members get access to expert-led workshops, peer-to-peer learning, mentorship programs, and real-world case studies. We ensure you gain not just theoretical insights but practical strategies you can immediately apply to accelerate your growth.
+            </p>
+          </div>
+        </article>
+
+  <article className="connect-card">
+          <img src={collaborate } alt="collaborate " className="connect-card-img-top" />
+          <div className="connect-card-body">
+            <h3 className="connect-card-title">Collaborate</h3>
+            <p className="connect-card-text">
+            Collaboration is the key to sustainable success. Xceed fosters meaningful partnerships, joint ventures, and cross-industry alliances, helping members create new opportunities that would be impossible to achieve alone. Together, we turn collective strengths into impactful results.
             </p>
           </div>
         </article>
@@ -81,9 +85,7 @@ export default function Connect() {
           <div className="connect-card-body">
             <h3 className="connect-card-title">Grow</h3>
             <p className="connect-card-text">
-              Whether you’re launching your first venture or scaling your fifth,
-              Xceed Network provides the tools, support, and community to help
-              you grow smarter, faster, and stronger—together.
+             Scaling a business requires the right support system. Xceed provides resources, digital tools, and community-driven programs to help you expand smarter and faster. Whether you’re growing locally or aiming for national recognition, our network ensures you have the guidance and visibility to thrive.
             </p>
           </div>
         </article>

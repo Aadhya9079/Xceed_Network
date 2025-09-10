@@ -1,7 +1,7 @@
 import "./Community.css"
-import community from "../assets/community.jpeg";
-import community1 from "../assets/community1..jpg";
-import mentors from "../assets/mentors.jpeg";
+import community from "../assets/community.jpeg"
+import community1 from "../assets/community2.png"
+import mentors from "../assets/mentors.jpeg"
 import investors from "../assets/investors.jpeg"
 import city from "../assets/city.jpg"
 import workshops from "../assets/workshops.jpg"
@@ -13,7 +13,7 @@ export default function Services() {
   return (
     <section class="community-section">
   <div class="community-header">
-    <h2>The Power of the Xceed Community</h2>
+    <h2 className="community-heading">The Power of the Xceed Community</h2>
     <p>An ever-growing network of entrepreneurs, leaders, mentors, and investors working together to build business success.</p>
   </div>
 

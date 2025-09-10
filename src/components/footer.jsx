@@ -54,9 +54,6 @@ const Footer = () => {
           <div>
             <h3 className="footer-title">Contact</h3>
             <ul>
-              <li className="footer-contact" footer-address>
-                <span>📍</span>3964 Rivermark Plaza #113, Santa Clara, CA 95054, USA
-              </li>
               <li className="footer-contact">
                 <span>📞</span>
                 <a href="tel:+919319395333">+91 9319395333</a>

@@ -1,99 +1,155 @@
-/* ===== Events Section ===== */
 .events-section {
-  background: #eaeaea;
-  padding: 60px 40px;
   text-align: center;
-  margin-bottom: -40px;
+  padding: 60px 20px;
+  background: #fff;
 }
 
-.events-section h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #111;
+.events-section-heading {
+  font-size: 2.2rem;
+  color: black;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-/* ===== Row layout ===== */
+.events-description {
+  font-size: 16px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.events-select-month {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
 .events-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap; /* stack on small screens */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* ===== Event card ===== */
 .event-card {
-  background: #f9f9f9;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  flex: 1 1 45%; /* 2 cards per row */
-  max-width: 400px;
-  height: 480px;
-  display: flex;
-  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
   text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.event-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ===== Image block ===== */
 .event-image {
   position: relative;
-  overflow: hidden;
-  border-radius: 15px;
 }
 
 .event-image img {
   width: 100%;
-  height: 300px;
-  display: block;
-  border-radius: 15px;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* ===== Logo overlay ===== */
-.event-logo {
+.event-type {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  max-width: 80%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  top: 10px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 12px;
 }
 
-.event-logo img {
-  max-height: 50px;
-  width: auto;
-  display: block;
+.event-date {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 15px;
 }
 
-/* ===== Text content in column ===== */
-.event-content {
-  display: flex;
-  flex-direction: column;
-  /* gap: 12px;  */
-  margin-top: 18px;
-}
-
-.event-content p {
-  font-size: 15px;
-  line-height: 1.6;
+.event-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 15px;
   color: #333;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
-  .event-card {
-    flex: 1 1 100%; /* single column on mobile */
-    max-width: 100%;
-  }
+.event-register-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  background: #D4AF37;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.events-view-all {
+ margin: 30px auto 0 auto; 
+  padding: 12px 30px;
+  background: #0a1f6e;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+}
+
+.react-datepicker {
+  font-family: Arial, sans-serif;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.react-datepicker__header {
+  background-color: #0a1f6e;
+  color: #fff;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  padding: 10px;
+  width: 240px;
+}
+
+.react-datepicker__current-month {
+  font-size: 20px;
+  font-weight: 700;
+  height: 0%;
+  color: #fff;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  width: 30px; /* Smaller day size */
+  margin: 0.1rem;
+}
+
+.react-datepicker__day {
+  border-radius: 50%;
+}
+
+.react-datepicker__day:hover {
+  background-color: #D4AF37;
+  color: #fff;
+}
+.react-datepicker__month-container {
+  height: 250px; /* Set your desired calendar height */
+}
+
+.react-datepicker__day--selected {
+  background-color: #0a1f6e;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--today {
+  font-weight: bold;
+  border-bottom: 2px solid #0a1f6e;
 }

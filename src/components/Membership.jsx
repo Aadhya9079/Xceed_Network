@@ -14,8 +14,7 @@ export default function Membership() {
             <div className="member-card-body">
               <h3 className="member-card-title">Our Programs </h3>
               <p className="member-card-text">
-                A thriving community where founders, leaders, and professionals
-                connect for peer learning, mentorship.
+               At Xceed, we’ve designed programs that empower entrepreneurs, professionals, and businesses at every stage of their journey. Each initiative is built to provide opportunities, visibility, and growth in a trusted community.
               </p>
               <span className="member-cta">Explore →</span>
             </div>
@@ -26,8 +25,7 @@ export default function Membership() {
             <div className="member-card-body">
               <h3 className="member-card-title">Our Services</h3>
               <p className="member-card-text">
-                Celebrating milestones made possible by our members: 250+ collaborations,
-                90% satisfaction, 30+ funded initiatives.
+                 Our services are designed to empower entrepreneurs and professionals with the right tools, support, and opportunities to grow their business, enhance visibility, and build lasting connections. 
               </p>
               <span className="member-cta">View Highlights →</span>
             </div>
@@ -38,8 +36,7 @@ export default function Membership() {
             <div className="member-card-body">
               <h3 className="member-card-title">Our Benefits</h3>
               <p className="member-card-text">
-                Unlock warm intros, playbooks, tools, visibility, and brand lift — compounding
-                value from day one.
+               From networking and mentorship to visibility and business opportunities, Xceed offers a range of advantages that make your membership truly valuable.
               </p>
               <span className="member-cta">See Benefits →</span>
             </div>

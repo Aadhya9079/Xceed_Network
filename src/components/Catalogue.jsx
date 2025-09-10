@@ -1,80 +1,124 @@
-import { useEffect, useRef, useState } from "react";
-import "./catalogue.css";
+import { useEffect, useRef, useState } from "react"
+import "./catalogue.css"
+import Minatologo from "../assets/minatologo.png"
+import nayatilogo from "../assets/nayatilogo.png"
+import nayati from "../assets/nayati.jpeg"
+import nayati1 from "../assets/nayati1.jpeg"
+import minato from "../assets/minato.jpeg"
+import minato1 from "../assets/minato1.jpg"
+import minato2 from "../assets/minato.jpg"
+import nayati2 from "../assets/nayati2.jpg"
 
-const banners = [
-  { title: "Premium Offering", text: "Describe your flagship package. Edit anytime." },
-  { title: "Starter Bundle", text: "Entry option to get started quickly." },
-  { title: "Enterprise Suite", text: "Scale-ready offering for growing teams." },
-  { title: "Growth Toolkit", text: "Templates, playbooks, and checklists." },
-  { title: "Brand Assets", text: "Logos, guidelines, media kits." },
-  { title: "Partner Integrations", text: "Plug into tools your team already uses." },
-  { title: "Launch Campaign", text: "Pre-built campaigns to go live fast." },
-  { title: "Support & Success", text: "Priority assistance and onboarding." },
-  { title: "Training & Workshops", text: "Upskill your team with expert sessions." },
-  { title: "Custom Solutions", text: "Tailored builds for specific needs." },
-];
+const BUSINESSES = [
+  {
+    logo: Minatologo,
+    name: "Minato Groups",
+    badges: ["Super", "5yrs", "Verified"],
+    type: "Agent, Online Sales",
+    location: "China",
+    employees: "600",
+    images: [
+      minato,
+      minato1,
+      minato2
+    ]
+  },
+  {
+    logo: nayatilogo,
+    name: "Nayati International",
+    badges: ["Premier", "18yrs", "Verified"],
+    type: "Exporter, Manufacturer",
+    location: "China",
+    employees: "450",
+    images: [
+      nayati,
+      nayati1,
+      nayati2
+    ]
+  },
+    {
+    logo: Minatologo,
+    name: "Minato Groups",
+    badges: ["Super", "5yrs", "Verified"],
+    type: "Agent, Online Sales",
+    location: "China",
+    employees: "600",
+    images: [
+      minato,
+      minato1,
+      minato2
+    ]
+  },
+  {
+    logo: nayatilogo,
+    name: "Nayati International",
+    badges: ["Premier", "18yrs", "Verified"],
+    type: "Exporter, Manufacturer",
+    location: "China",
+    employees: "450",
+    images: [
+      nayati,
+      nayati1,
+      nayati2
+    ]
+  },
+]
 
 export default function Catalogue() {
-  const loopItems = [...banners, ...banners]; // duplicate for infinite scroll
-  const trackRef = useRef(null);
-  const [offset, setOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStart = useRef(0);
-  const lastOffset = useRef(0);
+  const trackRef = useRef(null)
+  const [offset, setOffset] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
+  const dragStart = useRef(0)
+  const lastOffset = useRef(0)
 
-  // Auto-scroll
   useEffect(() => {
-    let animationId;
-    const speed = 0.5; // lower = slower
-
+    let animationId
+    const speed = 0.5
     const animate = () => {
       if (!isDragging) {
-        setOffset((prev) => (prev - speed) % (trackRef.current.scrollWidth / 2));
+        setOffset((prev) => (prev - speed) % (trackRef.current.scrollWidth / 2))
       }
-      animationId = requestAnimationFrame(animate);
-    };
+      animationId = requestAnimationFrame(animate)
+    }
+    animationId = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationId)
+  }, [isDragging])
 
-    animationId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationId);
-  }, [isDragging]);
-
-  // Apply transform
   useEffect(() => {
     if (trackRef.current) {
-      trackRef.current.style.transform = `translateX(${offset}px)`;
+      trackRef.current.style.transform = `translateX(${offset}px)`
     }
-  }, [offset]);
+  }, [offset])
 
-  // Drag handlers
   const handleMouseDown = (e) => {
-    setIsDragging(true);
-    dragStart.current = e.clientX;
-    lastOffset.current = offset;
-  };
+    setIsDragging(true)
+    dragStart.current = e.clientX
+    lastOffset.current = offset
+  }
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const delta = e.clientX - dragStart.current;
-    setOffset(lastOffset.current + delta);
-  };
-  const handleMouseUp = () => setIsDragging(false);
-
-  // Touch handlers (mobile swipe)
+    if (!isDragging) return
+    const delta = e.clientX - dragStart.current
+    setOffset(lastOffset.current + delta)
+  }
+  const handleMouseUp = () => setIsDragging(false)
   const handleTouchStart = (e) => {
-    setIsDragging(true);
-    dragStart.current = e.touches[0].clientX;
-    lastOffset.current = offset;
-  };
+    setIsDragging(true)
+    dragStart.current = e.touches[0].clientX
+    lastOffset.current = offset
+  }
   const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const delta = e.touches[0].clientX - dragStart.current;
-    setOffset(lastOffset.current + delta);
-  };
-  const handleTouchEnd = () => setIsDragging(false);
+    if (!isDragging) return
+    const delta = e.touches[0].clientX - dragStart.current
+    setOffset(lastOffset.current + delta)
+  }
+  const handleTouchEnd = () => setIsDragging(false)
+
+  const loopItems = [...BUSINESSES, ...BUSINESSES]
 
   return (
     <section className="catalogue-section" id="catalogue">
       <div className="catalogue-container">
-        <h2 className="catalogue-title">CATALOGUE</h2>
+        <h2 className="catalogue-title">Our Business Community</h2>
 
         <div
           className="catalogue-ticker"
@@ -86,24 +130,35 @@ export default function Catalogue() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="catalogue-track" ref={trackRef}>
-            {loopItems.map((b, i) => (
-              <a
-                className={`catalogue-banner ${['banner-a','banner-b','banner-c'][i % 3]}`}
-                key={i}
-                href="#"
-                aria-label={`Open ${b.title}`}
-              >
-                <div className="banner-content">
-                  <h3>{b.title}</h3>
-                  <p>{b.text}</p>
-                  <span className="catalogue-cta">Learn More</span>
-                </div>
-              </a>
-            ))}
-          </div>
+         <div className="catalogue-track" ref={trackRef}>
+  {loopItems.map((b, i) => (
+    <div key={i} className="business-card">
+      <img src={b.logo} alt={b.name} className="business-logo" />
+
+      <h3 className="business-name">{b.name}</h3>
+
+      <div className="business-badges">
+        {b.badges.map((badge, idx) => (
+          <span key={idx} className="badge">{badge}</span>
+        ))}
+      </div>
+
+      <p className="business-category-location">
+        {b.type} · {b.location} · Employees: {b.employees}
+      </p>
+
+      <div className="business-images">
+        {b.images.map((img, idx) => (
+          <img key={idx} src={img} alt={`Business ${i} image ${idx}`} />
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
+        <button className = "See-all">See All</button>
       </div>
     </section>
-  );
+  )
 }

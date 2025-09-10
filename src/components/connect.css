@@ -3,7 +3,7 @@
 ========================= */
 
 :root {
-  --space-blue: #0b3d91;
+  /* --space-blue: #0b3d91; */
   --space-blue-deep: #072a63;
   --space-blue-accent: #cad1dc;
   --space-black: #0b0c10;
@@ -22,26 +22,6 @@
 
 .connect-header { text-align: center; margin-bottom: 28px; }
 
-/* Typing animation (no cursor) */
-.connect-title {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0 0 12px;
-  font-weight: 800;
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-  color: var(--heading);
-  width: 0;
-  animation: typing 5.2s steps(34, end) infinite;
-  will-change: width;
-}
-@keyframes typing {
-  0% { width: 0; }
-  55% { width: 100%; }
-  75% { width: 100%; }
-  100% { width: 0; }
-}
-
 .connect-sub {
   margin: 0 auto;
   max-width: 860px;
@@ -51,13 +31,25 @@
   padding-inline: 8px;
 }
 
+.connect-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--heading);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 /* Grid */
 .connect-grid {
-  max-width: 1240px;
+  max-width: 1310px;
   margin: 32px auto 0 auto;
   display: grid;
   gap: 32px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   padding-inline: clamp(4px, 2vw, 16px);
 }
 @media (max-width: 1100px) { .connect-grid { gap: 28px; } }
@@ -75,6 +67,8 @@
   background: #0a1f6e;
   animation: pulseZoom 2.8s ease-in-out infinite;
   transition: box-shadow .35s ease, transform .35s ease, filter .35s ease;
+  height: 550px;
+  width: 300px;
 }
 .connect-card::before {
   content: ""; position: absolute; inset: 0;
@@ -116,7 +110,7 @@
   font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   font-weight: 800;
   margin: 4px 0 10px;
-  color: var(--title-on-blue);
+  color: #fff;
   letter-spacing: 0.2px;
 }
 .connect-card-text {
@@ -128,7 +122,14 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .connect-title { animation: none; width: auto; }
+  .connect-title { width: auto;  }
   .connect-card { animation: none; }
   .connect-card:hover { transform: none; box-shadow: 0 12px 18px rgba(0,0,0,.35); }
+}
+
+@media (max-width: 480px) {
+  .connect-card{
+    width: 350px;
+    height: 450px;
+  }
 }

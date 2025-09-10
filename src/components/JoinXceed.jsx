@@ -76,16 +76,17 @@ export default function JoinXceed() {
       form.title &&
       form.fullName.trim().length >= 2 &&
       isEmail(form.email) &&
+      form.password.trim().length >= 6 &&
       form.countryCode &&
       isPhoneLocal(form.phone)
-    );
-  }, [form]);
+    )
+  }, [form])
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isValid) return;
     alert(
-      `Registration submitted:\n${form.title} ${form.fullName}\n${form.email}\n${form.countryCode} ${form.phone}`
+      `Registration submitted:\n${form.fullName}\n${form.email}\n${form.password}\n${form.countryCode} ${form.phone}`
     );
   };
 
@@ -95,11 +96,6 @@ export default function JoinXceed() {
         <h2>Join Xceed</h2>
 
         <form onSubmit={handleSubmit} noValidate>
-          <label>Title <span className="req">*</span></label>
-          <select name="title" value={form.title} onChange={onChange} onBlur={markTouched} required>
-            <option>Mr</option><option>Mrs</option><option>Ms</option><option>Dr</option><option>Prof</option>
-          </select>
-
           <label>Full Name <span className="req">*</span></label>
           <input
             name="fullName"
@@ -121,6 +117,18 @@ export default function JoinXceed() {
             onBlur={markTouched}
             required
             className={touched.email && !isEmail(form.email) ? "invalid" : ""}
+          />
+
+ <label>Password <span className="req">*</span></label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={form.password}
+            onChange={onChange}
+            onBlur={markTouched}
+            required
+            className={touched.password && form.password.trim().length < 6 ? "invalid" : ""}
           />
 
           <label>Phone <span className="req">*</span></label>

@@ -6,7 +6,7 @@ const Reviews = () => {
   return (
     <section className="membership-section">
       <div className="membership-container">
-        <h2 className="membership-title">HAPPY CUSTOMERS</h2>
+        <h2 className="membership-title">Xceed Success Stories</h2>
 
         <div className="membership-cards">
 
