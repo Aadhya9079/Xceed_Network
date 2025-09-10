@@ -2,8 +2,8 @@ import { useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import Event1 from "../assets/event.jpeg"
-import Event2 from "../assets/Event1.jpeg"
-import Event3 from "../assets/Events.jpeg"
+import Event2 from "../assets/event1.jpeg"
+import Event3 from "../assets/events.jpeg"
 import "./Events.css"
 
 const EVENTS_DATA = [

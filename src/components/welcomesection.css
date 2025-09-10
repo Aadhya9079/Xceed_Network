@@ -167,7 +167,7 @@
 
   /* Reorder for stacked flow */
   .top-left { order: 1;
-  height: 250px; }     /* Image 1 */
+  height: 220px; }     /* Image 1 */
   .top-right { order: 2; }    /* Text 1 */
   .bottom-right { order: 3; } /* Image 2 */
   .bottom-left { order: 4; }  /* Text 2 */

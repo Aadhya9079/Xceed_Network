@@ -243,6 +243,9 @@
 
 /* ===== Phone Layout Fix ===== */
 @media (max-width: 480px) {
+  .headerImage{
+    margin-top: -20px;
+  }
   .xh-top-row {
     flex-direction: column;
     align-items: center;
@@ -275,13 +278,95 @@
   .xh-social-icon { height: 22px; width: 22px; }
 }
 
+/* Update the styles within your existing @media (max-width: 480px) block */
 @media (max-width: 480px) {
-  .headerImage {
-    width: 100%;        /* Full width on phone */
-    height: auto;       /* Maintain aspect ratio */
-    max-height: 80px;
-    object-fit: contain;
-    margin-top: -10px;
+  /* ... (Keep your existing styles for .xh-top-row, .xh-brand, etc.) ... */
+
+  /* The main sidebar container */
+  .xh-inner {
+    position: absolute; /* Position relative to its parent (.xh-header) */
+    top: 100%; /* Place it right below the header */
+    left: 0;
+    right: 0;
+    height: 420px;
+    /* Folding/unfolding effect */
+    max-height: 0; /* Initially hidden with 0 height */
+    overflow: hidden; /* Hide overflow content initially */
+    transition: max-height 0.3s ease-in-out; /* Smooth transition for folding */
+    
+    background: #0a1f6e; /* Match the nav bar background color */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1); /* Add a subtle shadow */
+    z-index: 9999; /* Place it above other content but below header */
+  }
+
+  .xh-inner.open {
+    max-height: 500px; /* A large enough value to show all content when open */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  /* The navigation list */
+  .xh-nav {
+    display: flex;
+    flex-direction: row; /* Ensure items stack vertically */
+    align-items: flex-start;
+    padding: 16px 20px;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* Individual nav items */
+  .xh-item {
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Remove the separator on the last item for a cleaner look */
+  .xh-item:last-child {
+    border-bottom: none;
+  }
+
+  /* The link buttons */
+  .xh-linkBtn {
+    width: 100%;
+    padding: 12px 0;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* The text for the links */
+  .xh-linkText {
+    font-size: 16px;
+  }
+
+  /* The submenu container */
+  .xh-submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: static;
+    background: transparent;
+    width: 100%;
+    
+    /* Folding/unfolding effect for sub-items */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .xh-submenu.open {
+    max-height: 300px; /* Sufficient height to show all sub-items */
+  }
+
+  /* Sub-links inside the dropdown */
+  .xh-subLink {
     display: block;
+    padding: 8px 24px;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 400;
   }
 }
