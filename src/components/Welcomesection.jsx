@@ -61,7 +61,7 @@ function WelcomeSection() {
             viewport={{ once: false, amount: 0.3 }}
           />
         </div>
-        <p className="last-p">At the heart of Xceed Network is a belief : business is not just about profits, it’s about people. Together, we celebrate wins, support each other through challenges, and create opportunities that help everyone rise. Because when we come together, we don’t just succeed - WE XCEED.</p>
+        <p className="last-p">At the heart of Xceed Network is a belief : business is not just about profits, it’s about people. Together, we celebrate wins, support each other through challenges, and create opportunities that help everyone rise. Because when we come together, we don’t just succeed - <span className="we-xceed">WE XCEED</span>.</p>
       </div>
     </section>
   );

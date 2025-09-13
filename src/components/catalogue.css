@@ -74,15 +74,17 @@
 }
 
 .business-logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 50%;
-  border: none;
+  display: block;
+  margin: 0 auto;
+ position: relative;
+  top: -40px;  /* Move up by 10px */
+
+  /* border: none; */
   padding: 5px;
-  background: transparent;
   position: relative;
-  top: -20px; /* Move the logo up by half its height */
   z-index: 1000;
 }
 
@@ -91,6 +93,8 @@
   font-size: 20px;
   margin: 10px 0;
   color: #333;
+  margin-top: -50px;
+  text-align: center;
 }
 
 .business-category,

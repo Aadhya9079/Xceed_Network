@@ -44,7 +44,7 @@ body {
   justify-content: center;
 }
 
-h2 {
+h4 {
   font-size: 28px;
   margin: 0;
 }
@@ -169,4 +169,45 @@ h2 {
 
 .dot.active {
   background: #007bff;
+}
+
+@media (max-width: 900px) {
+  .login-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-left,
+  .login-right {
+    padding: 30px;
+  }
+
+  .login-right img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  h4 {
+    font-size: 24px;
+  }
+
+  .login-form input,
+  .login-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .social-icons button {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .login-right img {
+    width: 150px;
+  }
+
+  .login-right p {
+    font-size: 14px;
+  }
 }

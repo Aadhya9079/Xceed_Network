@@ -30,7 +30,7 @@ export default function LoginPage() {
       <div className="login-wrapper">
         {/* Left section */}
         <div className="login-left">
-          <h2>Sign in</h2>
+          <h4>Sign in</h4>
           <p className="sub-text">to Xceed Network</p>
 
           <form className="login-form">

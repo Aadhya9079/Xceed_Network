@@ -1,23 +1,24 @@
-// src/App.jsx
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Core Components
-import Header from "./components/header";
-import LandingPage from "./components/landingpage";
+import Header from "./components/header"
+import LandingPage from "./components/landingpage"
 import WelcomeSection from "./components/Welcomesection";
-import Membership from "./components/Membership";
-import Catalogue from "./components/Catalogue";
-import Community from "./components/Community";
-import Connect from "./components/Connect";
-import Footer from "./components/footer";
-import JoinUs from "./components/JoinUs";
+import Membership from "./components/Membership"
+import Catalogue from "./components/Catalogue"
+import Community from "./components/Community"
+import Connect from "./components/Connect"
+import Footer from "./components/footer"
+import JoinUs from "./components/JoinUs"
 import Events from "./components/Events"
 import Reviews from "./components/reviews"
 import BecomeMember from "./components/BecomeMember"
+import FloatingPopup from "./components/floatingPopup"
 
 // Auth Pages
-import Login from "./components/LoginPage";
-import JoinXceed from "./components/JoinXceed";
+import Login from "./components/LoginPage"
+import JoinXceed from "./components/JoinXceed"
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
 
               <Footer />
               <JoinUs />
+              <FloatingPopup />
             </>
           }
         />
