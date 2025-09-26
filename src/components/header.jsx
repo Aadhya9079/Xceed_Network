@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "./header.css"
-
+import { Link } from "react-router-dom"
 import Logo from "../assets/logo.png"
 import Instagram from "../assets/instagram.png"
 import Facebook from "../assets/facebook.png"
@@ -64,12 +64,12 @@ export default function Header() {
 
             {/* Auth */}
             <div className="xh-auth">
-              <a href="/login">
-                <button className="xh-btn xh-btn--primary">MEMBER'S LOGIN</button>
-              </a>
-              <a href="/join-xceed">
-                <button className="xh-btn xh-btn--accent">JOIN XCEED</button>
-              </a>
+                <Link to="/login">
+    <button className="xh-btn xh-btn--primary">MEMBER'S LOGIN</button>
+  </Link>
+  <Link to="/join-xceed">
+    <button className="xh-btn xh-btn--accent">JOIN XCEED</button>
+  </Link>
             </div>
 
             {/* Hamburger */}

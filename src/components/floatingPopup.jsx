@@ -1,6 +1,6 @@
 import { FaWhatsapp } from 'react-icons/fa'
 import { TbMessageChatbot } from 'react-icons/tb'
-import './FloatingPopup.css'
+import './floatingPopup.css'
 
 export default function FloatingPopup() {
   const openWhatsapp = () => {
