@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import "./catalogue.css"
-import Minatologo from "../assets/Minatologo.png"
+import Minatologo from "../assets/minatologo.png"
 import nayatilogo from "../assets/nayatiLogo1.png"
 import nayati from "../assets/nayati.jpeg"
 import nayati1 from "../assets/nayati1.jpeg"

@@ -175,14 +175,14 @@ import { BsWhatsapp } from "react-icons/bs";
 // }
 
 export default function JoinXceed() {
-  const openTelegram = () => {
-    window.open('https://t.me/Xceedgrow', '_blank')
+  const openCommunity = () => {
+    window.open('https://chat.whatsapp.com/JMFmeXFidDn3xlvgQL5xoI?mode=ems_copy_t', '_blank')
   }
   return (
     <div className="join-xceed">
       <div className="join-xceed-box">
-        <h4>Join our Telegram Community and become a member of Xceed</h4>
-        <button className="join" onClick={openTelegram}>Join Now</button>
+        <h4>Join our Whatsapp Community and become a member of Xceed</h4>
+        <button className="join" onClick={openCommunity}>Join Now</button>
       </div>
     </div>
   )
